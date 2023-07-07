@@ -1,0 +1,13 @@
+{
+	"name": "@core/di",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "Injection of dependencies for repositories, http client, and use cases",
+    "dependencies" : {
+		"@core/entities" : "^1.0.0",
+		"@core/domain-logic" : "^1.0.0",
+		"@core/data" : "^1.0.0"
+	},
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

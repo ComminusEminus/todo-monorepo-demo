@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "../fieldset/tsconfig.ref.json" 
+      },
+    ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}

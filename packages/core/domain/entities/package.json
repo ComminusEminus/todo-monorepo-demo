@@ -1,0 +1,8 @@
+{
+	"name": "@core/entities",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "Interfaces for domain",
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

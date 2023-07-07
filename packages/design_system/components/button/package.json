@@ -1,0 +1,8 @@
+{
+	"name": "@design/buttons",
+	"version": "1.0.0",
+	"description": "Array of button styles",
+    "type": "module",
+    "main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

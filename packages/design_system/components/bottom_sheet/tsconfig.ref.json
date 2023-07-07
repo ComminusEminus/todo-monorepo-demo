@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "../scrim/tsconfig.ref.json" 
+      },
+      { 
+        "path": "../buttons/tsconfig.ref.json" 
+      },
+      { 
+        "path": "../../contexts/bottomsheet_context/tsconfig.ref.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}

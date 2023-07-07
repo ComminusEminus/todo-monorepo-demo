@@ -1,0 +1,16 @@
+{
+	"name": "@ui/form-display",
+	"version": "1.0.0",
+	"description": "Context provider for shared states of user interface",
+	"dependencies" : {
+		"@core/di" : "^1.0.0",
+		"@core/entities" : "^1.0.0",
+		"@ui/todo-list" : "^1.0.0",
+		"@ui/todo-lists" : "^1.0.0",
+		"@ui/contexts" : "^1.0.0"
+	},
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts",
+	"type": "module",
+	"exports": {".": "./dist/src/index.js"}
+}	

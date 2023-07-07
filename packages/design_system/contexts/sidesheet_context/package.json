@@ -1,0 +1,11 @@
+{
+	"name": "@design/sidesheetcontext",
+	"version": "1.0.0",
+	"description": "",
+	"dependencies" : {
+		"@design/useopenclosecontroller" : "^1.0.0"
+	},
+    "type": "module",
+    "main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

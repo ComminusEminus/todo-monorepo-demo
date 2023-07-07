@@ -1,0 +1,1 @@
+export {TypographyStyle} from './Typography'

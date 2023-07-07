@@ -1,0 +1,11 @@
+{
+	"name": "@design/animationwrapper",
+	"version": "1.0.0",
+	"description": "Parent component to handle animation changes",
+	"dependencies" : {
+		"@design/animations" : "^1.0.0"
+	},
+    "type": "module",
+    "main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

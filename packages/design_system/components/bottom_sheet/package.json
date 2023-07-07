@@ -1,0 +1,13 @@
+{
+	"name": "@design/bottomsheet",
+	"version": "1.0.0",
+	"description": "Bottom drawer component overlays ui with options",
+	"dependencies" : {
+		"@design/scrim" : "^1.0.0",
+		"@design/buttons" : "^1.0.0",
+		"@design/bottomsheetcontext" : "^1.0.0"
+	},
+    "type": "module",
+    "main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

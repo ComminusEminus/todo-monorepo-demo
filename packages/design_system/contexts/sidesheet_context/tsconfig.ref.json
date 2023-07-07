@@ -1,0 +1,13 @@
+{
+    "extends": "../../../../tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "@design/useopenclosecontroller/tsconfig.ref.json" 
+      }
+
+    ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}

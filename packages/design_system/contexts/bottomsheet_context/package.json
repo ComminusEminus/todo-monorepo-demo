@@ -1,0 +1,12 @@
+{
+	"name": "@design/bottomsheetcontext",
+	"version": "1.0.0",
+	"description": "",
+	"dependencies" : {
+		"@design/bottomsheet" : "^1.0.0",
+		"@design/useopenclosecontroller" : "^1.0.0"
+	},
+    "type": "module",
+    "main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

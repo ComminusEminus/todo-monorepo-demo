@@ -1,0 +1,12 @@
+{
+	"name": "@design/forms",
+	"version": "1.0.0",
+	"description": "",
+	"dependencies" : {
+		"@design/buttons":  "^1.0.0",
+		"@design/container": "^1.0.0"
+	},
+	"type": "module",
+	"main": "dist/src/index.ts",
+    "types": "dist/src/index.d.ts"
+}	

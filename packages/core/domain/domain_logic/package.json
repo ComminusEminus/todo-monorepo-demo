@@ -1,0 +1,12 @@
+{
+	"name": "@core/domain-logic",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "Use cases for the operations of the todo app",
+    "dependencies" : {
+		"@core/abstractions" : "^1.0.0",
+		"@core/entities" : "^1.0.0"
+	},
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

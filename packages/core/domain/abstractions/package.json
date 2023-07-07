@@ -1,0 +1,11 @@
+{
+	"name": "@core/abstractions",
+	"version": "1.0.0",
+    "type": "module",
+	"description": "Repository interfaces for application",
+    "dependencies" : {
+		"@core/entities" : "^1.0.0"
+	},
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

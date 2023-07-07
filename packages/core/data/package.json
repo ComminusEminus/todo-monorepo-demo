@@ -1,0 +1,20 @@
+{
+	"name": "@core/data",
+	"version": "1.0.0",
+	"type": "module",
+	"exports":	{
+		".": {
+			"import": {
+				"types": "./dist/src/index.js",
+				"default": "./dist/src/index.d.ts"
+			}
+		}
+	},
+	"description": "Repository implementations using axios.",
+    "dependencies" : {
+		"@todo/abstractions" : "^1.0.0",
+		"@todo/entities" : "^1.0.0"
+	},
+    "main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts"
+}	

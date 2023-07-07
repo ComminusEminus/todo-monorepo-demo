@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "@design/scrim/tsconfig.ref.json" 
+      },
+      { 
+        "path": "@design/buttons/tsconfig.ref.json" 
+      },
+      { 
+        "path": "@design/icons/tsconfig.ref.json" 
+      },
+    ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}

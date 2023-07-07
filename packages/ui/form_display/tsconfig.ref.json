@@ -1,0 +1,24 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "@core/entities/tsconfig.ref.json" 
+      },
+      { 
+        "path": "@core/di/tsconfig.ref.json" 
+      },
+      { 
+        "path": "@ui/todo-list/tsconfig.ref.json" 
+      },
+      { 
+        "path": "@ui/todo-lists/tsconfig.ref.json" 
+      },
+      { 
+        "path": "@ui/contexts/tsconfig.ref.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}
