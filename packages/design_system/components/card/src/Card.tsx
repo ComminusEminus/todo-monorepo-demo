@@ -4,7 +4,6 @@ import {Container} from '@design/container'
 import {Text} from '@design/text'
 import {useTheme} from 'styled-components'
 
-
 interface CardProps extends CardStyleProps {
     headline?: string;
     subHeader?: string;

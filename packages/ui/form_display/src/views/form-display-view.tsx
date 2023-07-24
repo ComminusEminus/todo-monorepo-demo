@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container} from '@design/container'
-import {FormDisplayContainer} from '@ui/form-display'
+import {FormDisplayContainer} from '../components/form-display-container'
 import {useTheme} from 'styled-components'
 
 export const FormDisplayView = () => {

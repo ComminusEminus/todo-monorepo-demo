@@ -1,7 +1,6 @@
 import React, {useEffect, createContext, useState, useContext, useRef} from 'react';
-import {ITodoList, Visibility} from '@core/entities'
-import {useUIContext} from '@ui/contexts'
-import {ITodoListAsListDescription} from '@ui/todo-lists'
+import {Visibility, ITodoListAsListDescription} from '@core/entities'
+import {useUIContext} from './ui-context'
 
 export interface IListContext{
   originalState?: ITodoListAsListDescription;
@@ -25,7 +24,7 @@ export const ListsContext = createContext<IListContext>(defaultState);
 
 export const useListsContext = () => {
     const {...value} = useContext<IListContext>(ListsContext) 
-    return {...value} as const 
+    return {...value}
 }
 
 export interface IListsProvider{

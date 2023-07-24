@@ -1,7 +1,7 @@
-import {IAddNewTodoListItemFormResponse} from '@todo/entities'
-import {addNewListItem} from '@todo/di'
-import {useUIContext} from '@todo/ui-context';
-import { useForm } from "react-hook-form";
+import { IAddNewTodoListItemFormResponse } from '@core/entities'
+import { addNewListItem } from '@core/di'
+import { useUIContext } from '@ui/contexts';
+import { useForm, Resolver } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
@@ -12,34 +12,33 @@ type FormValues = {
 }
 
 
-
 const schema = yup.object().shape({
     title: yup.string().required(),
     description: yup.string().required(),
-  }).required();
+}).required();
 
 export const useAddNewTodoListItemForm = () => {
-    const {setUpdate, userProfile, viewTodoList} = useUIContext()
-    const { register, 
+    const { setUpdate, userProfile, viewTodoList } = useUIContext()
+    const { register,
         handleSubmit,
-        formState: {errors},
-    } = useForm<FormValues>({resolver: yupResolver(schema)});
+        formState: { errors },
+    } = useForm<FormValues>({ resolver: yupResolver(schema) });
 
     const onSubmit = (data: IAddNewTodoListItemFormResponse) => {
-        if(!userProfile){
+        if (!userProfile) {
             return;
         }
-        if(!viewTodoList){
+        if (!viewTodoList) {
             return;
         }
-        try{
+        try {
             const response = addNewListItem.execute(viewTodoList, data, userProfile.id)
             setUpdate?.(`New item has been added`)
-        }catch{
+        } catch {
             //create error boudary
             console.log('An error occured adding new todo item')
         }
     };
 
-    return {onSubmit, register, handleSubmit, errors} as const 
+    return { onSubmit, register, handleSubmit, errors }
 }

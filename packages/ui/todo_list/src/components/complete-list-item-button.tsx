@@ -1,5 +1,5 @@
 import React from 'react'
-import {useCompleteTodoListItemUI} from '@ui/todo-list'
+import {useCompleteTodoListItemUI} from '../hooks/index'
 import {ListItemStatus} from '@core/entities'
 import {Button} from '@design/buttons'
 import {useTheme} from 'styled-components'

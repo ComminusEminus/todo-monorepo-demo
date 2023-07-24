@@ -2,19 +2,24 @@
 	"name": "@core/data",
 	"version": "1.0.0",
 	"type": "module",
-	"exports":	{
-		".": {
-			"import": {
-				"types": "./dist/src/index.js",
-				"default": "./dist/src/index.d.ts"
-			}
-		}
-	},
 	"description": "Repository implementations using axios.",
     "dependencies" : {
-		"@todo/abstractions" : "^1.0.0",
-		"@todo/entities" : "^1.0.0"
+		"@core/abstractions" : "^1.0.0",
+		"@core/entities" : "^1.0.0"
 	},
-    "main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts"
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+    "main": "src/index.ts",
+	"module": "src/index.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/http-client.ts", "./src/todolist-item-repo-imp.ts", "./src/todolist-repo-imp.ts", "./src/user-repo-imp.ts"],
+			"require": ["./dist/index.js", "./dist/http-client.js", "./dist/todolist-item-repo-imp.js", "./dist/todolist-repo-imp.js", "./dist/user-repo-imp.js"]
+		}
+	},
+	"types":"types/packages/core/data/src/index.d.ts"
+	
 }	

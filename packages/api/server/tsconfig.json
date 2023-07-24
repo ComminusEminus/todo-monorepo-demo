@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src"],
+    "exclude":["test"],
+    "references": [
+      { 
+        "path": "../routes/tsconfig.json" 
+      },
+      { 
+        "path": "../middlewares/tsconfig.json" 
+      }    
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}

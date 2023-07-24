@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDeleteTodoListItemUI} from '@ui/todo-list'
+import {useDeleteTodoListItemUI} from '../hooks/index'
 import {Button} from '@design/buttons'
 import {useTheme} from 'styled-components'
 

@@ -1,6 +1,7 @@
 import styled, {createGlobalStyle} from 'styled-components'
-import AlbertSans_Bold from './Albert_Sans/AlbertSans_Bold.ttf'
-import Barlow_ExtraLight from './Barlow/Barlow_ExtraLight.ttf'
+import AlbertSans_Bold from './AlbertSans_Bold.ttf'
+import Barlow_ExtraLight from './Barlow_ExtraLight.ttf'
+
 
 
 export const TypographyStyle = createGlobalStyle`

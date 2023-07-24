@@ -1,0 +1,23 @@
+{
+	"name": "@api/controllers",
+	"version": "1.0.0",
+
+	"description": "",
+    "dependencies" : {
+		"@api/models" : "^1.0.0",
+		"@api/services" : "^1.0.0"
+	},
+	"types": "types/packages/api/controllers/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/todo-list-item.controller.ts", "./src/todo-list.controller.ts", "./src/user.controller.ts"],
+			"require": ["./dist/index.js", "./dist/todo-list-item.controller.js", "./dist/todo-list.controller.js", "./dist/user.controller.js"]
+		}
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	}
+}	

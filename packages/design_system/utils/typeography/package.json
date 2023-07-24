@@ -1,6 +1,31 @@
 {
-	"name": "@design/typography",
+	"name": "@design/typeography",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.ts"
+    "type": "module",
+	"browser": "dist/src/index.js",
+	"types": "types/packages/design_system/utils/typeography/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/Typography.ts"],
+			"require": ["./dist/index.js", "./dist/Typography.js"]
+		}
+	},
+	"module": "dist/src/index.js",
+    "main": "dist/src/index.js",
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx,.ttf src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions",
+		"last 2 FirefoxAndroid versions",
+		"last 2 iOS version",
+		"last 2 safari version"
+	]
+
 }	

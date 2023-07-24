@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import {addNewTodoList} from '@core/di'
 import {IAddNewTodoListFormResponse} from '@core/entities'
-import {useUIContext} from '@ui/context';
+import {useUIContext} from '@ui/contexts';
 
 
 type FormValues = {

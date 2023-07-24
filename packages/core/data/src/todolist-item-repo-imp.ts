@@ -1,6 +1,5 @@
-import {IHttpClient} from '@core/entities'
 import {ITodoListItemRepository} from '@core/abstractions'
-import {IAddNewTodoListItemFormResponse, ITodoListItem, IAxiosResponse} from '@core/entities'
+import {IAddNewTodoListItemFormResponse, ITodoListItem, IAxiosResponse, IHttpClient} from '@core/entities'
 
 export class TodoListItemRepoImp implements ITodoListItemRepository{
     dataSource: IHttpClient;

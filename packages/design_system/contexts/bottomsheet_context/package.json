@@ -2,11 +2,34 @@
 	"name": "@design/bottomsheetcontext",
 	"version": "1.0.0",
 	"description": "",
+	"browser": "dist/src/index.js",
 	"dependencies" : {
 		"@design/bottomsheet" : "^1.0.0",
 		"@design/useopenclosecontroller" : "^1.0.0"
 	},
     "type": "module",
+	"types": "types/packages/design_system/contexts/bottomsheet_context/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/BottomSheetContext.tsx"],
+			"require": ["./dist/index.js", "./dist/AnimationWrapper.js"]
+		}
+	},
+	"module": "dist/src/index.js",
     "main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts"
+
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions",
+		"last 2 FirefoxAndroid versions",
+		"last 2 iOS version",
+		"last 2 safari version"
+	]
 }	

@@ -2,16 +2,30 @@
 	"name": "@ui/pages",
 	"version": "1.0.0",
 	"description": "Context provider for shared states of user interface",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/create-user-page.ts", "./src/dashboard.ts", "./src/entry-point.ts", "./src/login-page.ts"],
+			"require": ["./dist/index.js", "./dist/create-user-page.js", "./dist/dashboard.js", "./dist/entry-point.js", "./dist/login-page.js"]
+		}
+	},
+	"types": "types/packages/ui/pages/src/index.d.ts",
 	"dependencies" : {
 		"@ui/user" : "^1.0.0",
 		"@ui/todo-list" : "^1.0.0",
 		"@ui/todo-lists" : "^1.0.0",
 		"@ui/list-item-detail" : "^1.0.0",
 		"@ui/form-display" : "^1.0.0",
-		"@ui/contexts" : "^1.0.0"
+		"@ui/contexts" : "^1.0.0",
+		"@design/container": "^1.0.0"
 	},
-	"main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts",
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	},
 	"type": "module",
-	"exports": {".": "./dist/src/index.js"}
+	"module": "dist/src/index.js",
+	"browser": "dist/src/index.js",
+    "main": "dist/src/index.js"
 }	

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useSelectTodoList} from '@ui/todo-lists'
+import {useSelectTodoList} from '../hooks/index'
 import {useTheme} from 'styled-components'
 import {Text} from '@design/text'
 import {Container} from '@design/container'

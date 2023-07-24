@@ -18,3 +18,4 @@ export enum Visibility {
     VISIBLE = 'VISIBLE',
     INVISIBLE = 'INVISIBLE'
 }
+

@@ -1,2 +1,2 @@
-export {Form, IFormProps} from './Form'
-export {FormStyle, IFormStyleProps} from './Form.style'
+export {Form} from './Form'
+export {FormStyle} from './Form.style'

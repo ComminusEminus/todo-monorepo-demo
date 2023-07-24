@@ -1,7 +1,8 @@
 import React from 'react'
-import {Container, ContainerProps} from '@design/container'
+import {Container} from '@design/container'
 
-interface NavBarLayoutProps extends ContainerProps{
+interface NavBarLayoutProps{
+    children?: string | JSX.Element | JSX.Element[]; 
     menuButton?: JSX.Element;
     logo?: JSX.Element;
 }

@@ -1,5 +1,5 @@
 import styled, {css, keyframes} from 'styled-components'
-import {slideOpen, slideClose} from '@design/slideopencloseanimation'
+import {slideOpen, slideClose} from '@design/animations'
 
 export interface SideSheetStyleProps{
     background?: string;

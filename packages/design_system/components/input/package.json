@@ -2,10 +2,32 @@
 	"name": "@design/input",
 	"version": "1.0.0",
 	"description": "",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/Input.tsx", "./src/Input.style.tsx" ],
+			"require": ["./dist/index.js", "./dist/Input.js", "./dist/Input.style.js"]
+		}
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"browser": "dist/src/index.js",
+	"module": "dist/src/index.js",
 	"dependencies" : {
 		"@design/fieldset" : "^1.0.0"
 	},
 	"type": "module",
     "main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts"
+	"types": "types/packages/design_system/components/input/src/index.d.ts",
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions",
+		"last 2 FirefoxAndroid versions",
+		"last 2 iOS version",
+		"last 2 safari version"
+	]
 }	

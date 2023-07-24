@@ -1,1 +1,1 @@
-export {BottomSheetContext, BottomSheetProvider, useBottomSheetContext} from './BottomSheetContext'
+export {BottomSheetContext, BottomSheetProvider, useBottomSheetContext} from './BottomSheetContext.js'

@@ -1,5 +1,5 @@
-import {useAddNewTodoListForm} from '@ui/todo-lists'
-import {Form} from '@design/form'
+import {useAddNewTodoListForm} from './index'
+import {Form} from '@design/forms'
 import {Input} from '@design/input'
 import React from 'react'
 
@@ -7,7 +7,7 @@ export const AddNewTodoListForm = () => {
     const {onSubmit, register, handleSubmit} = useAddNewTodoListForm()
     return(
         <Form handleSubmit = {handleSubmit} onSubmit = {onSubmit}> 
-            <Input {...register("title")} placeholder="Enter Title" /> 
+            <Input register = {register} name = {'Title'} placeholder="Enter Title" /> 
         </Form>
     )
 }

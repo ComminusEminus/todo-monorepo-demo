@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDisplayListItemDetailsUI} from '@ui/list-item'
+import {useDisplayListItemDetailsUI} from '../hooks/use-display-listitem-details-ui'
 import {Container} from '@design/container'
 import {Text} from '@design/text'
 import {useTheme} from 'styled-components'

@@ -1,7 +1,7 @@
 import React from 'react'
-import {useLoginUserForm} from '@ui/user'
+import {useLoginUserForm} from './index'
 import {Input} from '@design/input'
-import {Form} from '@design/form'
+import {Form} from '@design/forms'
 
 
 
@@ -9,8 +9,8 @@ export const LoginUserPresentation = () => {
     const {onSubmit, register} = useLoginUserForm()
     return(
         <Form onSubmit = {onSubmit}>
-            <Input {...register("userName")} placeholder="Enter Username"  /> 
-            <Input {...register("password")} placeholder="Enter Password"  /> 
+            <Input register = {register} name = {"userName"} placeholder="Enter Username"  /> 
+            <Input register = {register} name = {"password"} placeholder="Enter Password"  /> 
         </Form>
     )
 }

@@ -1,13 +1,13 @@
-import {useUIContext} from '@todo/ui-context';
-import {updateListItem} from '@todo/di'
-import {ITodoListItem} from '@todo/entities'
-import {IUser} from '@todo/entities'
-import {ITodoListItemDescription} from '@todo/todolist-ui-services'
+import {useUIContext} from '@ui/contexts';
+import {updateListItem} from '@core/di'
+import {ITodoListItem} from '@core/entities'
+import {IUser, ListItemStatus} from '@core/entities'
+
 
 export const useCompleteTodoListItem = () => {
     const {setUpdate, userProfile} = useUIContext();
 
-    const apiHandler = async (originalState: ITodoListItem, newCompleteState: string) => {
+    const apiHandler = async (originalState: ITodoListItem, newCompleteState: ListItemStatus) => {
         originalState.complete = newCompleteState
         if(!userProfile){
             return;
@@ -19,5 +19,5 @@ export const useCompleteTodoListItem = () => {
             console.log('an error occured updating complete property: ' + err)
         }
     }
-    return {apiHandler} as const;
+    return {apiHandler} ;
 } 

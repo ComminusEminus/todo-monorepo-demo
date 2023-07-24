@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src", "../../design_system/utils/theme/types/packages/design_system/utils/theme/src/styled.d.ts"],
+    "references": [
+      { 
+        "path": "../../core/domain/entities/tsconfig.json" 
+      },
+      { 
+        "path": "../../core/di/tsconfig.json" 
+      },
+      { 
+        "path": "../contexts/tsconfig.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}

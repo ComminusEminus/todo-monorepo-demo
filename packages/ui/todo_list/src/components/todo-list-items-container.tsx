@@ -1,10 +1,9 @@
 import React from 'react'
-import {useGetTodoListById} from '@ui/todo-list'
-import {FilterListButtonGroup} from './filter-list-button-group'
+import {useGetTodoListById} from '../hooks/use-get-todolist-by-id'
 import {Container} from '@design/container'
 import {Text} from '@design/text'
 import {useTheme} from 'styled-components'
-import {MapTodoListItems} from '@ui/todo-list'
+import {MapTodoListItems} from './map-todo-list-items'
 
 
 export const TodoListItemContainer = () => {
@@ -24,8 +23,7 @@ export const TodoListItemContainer = () => {
             {
                 todoList && (
                     <Container flexDirection = {'column'} background = {theme.colors.neutral.surface}>
-                        <FilterListButtonGroup/>
-                        <MapTodoListItems list = {todoList} />
+                        <MapTodoListItems list = {todoList}/>
                     </Container>
                 )
             }

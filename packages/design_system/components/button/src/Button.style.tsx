@@ -1,6 +1,6 @@
 import styled, {css, keyframes} from 'styled-components'
 
-export interface ButtonStyleProps{
+interface ButtonStyleProps{
     width?: string;
     size?: string;
     buttonStyle?: string;
@@ -16,6 +16,10 @@ export interface ButtonStyleProps{
     pl?: string;
     pr?: string;
     color?: string;
+}
+
+export type{
+    ButtonStyleProps
 }
 
 export const ButtonStyle = styled.button<ButtonStyleProps>`

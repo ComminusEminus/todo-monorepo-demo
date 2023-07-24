@@ -1,2 +1,2 @@
-export {Container, ContainerProps} from './Container'
-export {ContainerStyle, ContainerStyleProps} from './Container.style'
+export {Container} from './Container'
+export {ContainerStyle} from './Container.style'

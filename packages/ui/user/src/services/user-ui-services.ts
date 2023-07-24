@@ -1,15 +1,4 @@
-import {IUser, IAxiosResponse} from '@core/entities'
-
-export interface IMapUserProfile{
-    data: IUser;
-}
-
-export interface IMappedUserProfile{
-    id: string;
-    userName: string;
-    firstName: string;
-    lastName: string;
-}
+import {IUser, IAxiosResponse, IMapUserProfile, IMappedUserProfile} from '@core/entities'
 
 export const mapUserProfile = (response: IAxiosResponse): IMappedUserProfile => {
     

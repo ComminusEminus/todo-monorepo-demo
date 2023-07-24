@@ -12,7 +12,9 @@ interface ButtonStateStyleProps {
     type?: string;
     background?: string;
 }
-
+export type{
+    ButtonStateStyleProps
+}
 export const ButtonStateStyle = styled.div<ButtonStateStyleProps>`
     type: ${props => props.type}
     width: ${props => props.buttonStateWidth || 'fit-content'};

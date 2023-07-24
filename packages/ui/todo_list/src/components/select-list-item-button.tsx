@@ -1,13 +1,13 @@
 import React from 'react'
-import {useSelectTodoListItem} from '@ui/todo-list'
+import {useSelectTodoListItem} from '../hooks/index'
 import {Container} from '@design/container'
 import {Text} from '@design/text'
-import {useListItemContext} from '@ui/contexts'
+
 import styled, {useTheme, css} from 'styled-components'
 
 export const SelectListItemButton = () => {
-    const {selectHandler} = useSelectTodoListItem()
-    const {originalState} = useListItemContext()
+    const {selectHandler, originalState} = useSelectTodoListItem()
+
     const theme = useTheme()
     if(originalState){
         return(

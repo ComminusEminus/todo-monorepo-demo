@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src", "../theme/types/packages/design_system/utils/theme/src/styled.d.ts"],
+    "references": [
+        { 
+          "path": "../../components/svg_icon/tsconfig.json" 
+        }
+      ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}

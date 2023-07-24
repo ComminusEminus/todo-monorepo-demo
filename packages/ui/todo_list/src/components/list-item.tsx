@@ -6,8 +6,9 @@ import {
     SelectListItemButton,
     CompleteListItemButton,
     DeleteListItemButton,
-    ITodoListItemDescription
-} from '@ui/todo-list'
+} from '../index'
+
+import {ITodoListItemDescription} from '@core/entities'
 
 export interface IListItem{
     item: ITodoListItemDescription;

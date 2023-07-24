@@ -1,4 +1,4 @@
-import {useDisplayListItemDetails} from '@ui/display-list-item'
+import {useDisplayListItemDetails} from './use-display-listitem-details'
 import {useUIContext} from '@ui/contexts';
 import React, {useEffect, useState, useRef} from 'react'
 import {ITodoListItem} from '@core/entities'
@@ -14,7 +14,7 @@ export const useDisplayListItemDetailsUI = () => {
         if(!viewTodoListItem){
             return;
         }
-        handler(viewTodoListItem, userProfile.id)
+        handler(viewTodoListItem)
         
     },[viewTodoListItem])
 

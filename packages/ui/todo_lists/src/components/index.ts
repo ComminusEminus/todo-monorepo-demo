@@ -1,4 +1,3 @@
-export * from './add-new-list-button'
 export * from './delete-list-button'
 export * from './lists-item'
 export * from './lists-state-wrapper'

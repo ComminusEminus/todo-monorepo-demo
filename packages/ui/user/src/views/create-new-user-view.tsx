@@ -1,6 +1,7 @@
 import React from 'react'
 import {useTheme} from 'styled-components'
-import {LoginUserContainer, CreateUserPresentation} from '@ui/user'
+import {CreateUserPresentation} from '../forms/index'
+import {LoginUserContainer} from '../components/login-user-container'
 
 export const CreateNewUserView = () => {
     const theme = useTheme()

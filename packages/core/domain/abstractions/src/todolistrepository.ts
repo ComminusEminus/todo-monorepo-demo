@@ -6,3 +6,4 @@ export interface ITodoListRepository{
     deleteTodoList(listId: string, userId: string): Promise<IAxiosResponse>;
     getTodoListById(listId: string): Promise<IAxiosResponse>;
 }
+

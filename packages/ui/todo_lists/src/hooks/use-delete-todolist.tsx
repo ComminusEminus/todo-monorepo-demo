@@ -1,4 +1,4 @@
-import {deleteTodoList} from '@todo/di'
+import {deleteTodoList} from '@core/di'
 import {useUIContext} from '@ui/contexts'
 
 export const useDeleteTodoListHandler = () => {

@@ -1,5 +1,6 @@
 import {getAllTodoLists} from '@core/di'
-import {mapToListsDescription, IMapToListDescription, ITodoListAsListDescription} from '@ui/todo-lists'
+import {mapToListsDescription} from '../services/todolists-ui-services'
+import { IRequestListsResponse, ITodoListAsListDescription} from '@core/entities'
 import {useUIContext} from '@ui/contexts'
 import {useState, useEffect} from 'react'
 
@@ -14,7 +15,7 @@ export const useGetAllTodoListsState = () => {
             return;
         }
         try{
-            const response: IMapToListDescription = await getAllTodoLists.execute(userProfile.userName)
+            const response: IRequestListsResponse = await getAllTodoLists.execute(userProfile.userName)
             const mappedResponse: ITodoListAsListDescription[] = mapToListsDescription(response)
             setTodoLists(mappedResponse)
         }catch(err){

@@ -1,5 +1,5 @@
 import React from 'react'
-import {TodoListsContainer} from '@ui/todo-lists'
+import {TodoListsContainer} from '../components/index'
 import {Container} from '@design/container'
 import {useTheme} from 'styled-components'
 

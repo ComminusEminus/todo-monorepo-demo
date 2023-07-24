@@ -1,7 +1,7 @@
 import {useDeleteTodoListItem} from './use-delete-todolist-items'
 import {useRef, useEffect} from 'react'
-import {useListItemContext} from '@todo/ui-context'
-import {Visibility} from '@todo/constants'
+import {useListItemContext} from '@ui/contexts'
+import {Visibility} from '@core/entities'
 
 
 export const useDeleteTodoListItemUI = () => {
@@ -22,5 +22,5 @@ export const useDeleteTodoListItemUI = () => {
         }
     }, [visibilityState])
 
-    return {visibilityState, visibilityHandler} as const 
+    return {visibilityState, visibilityHandler}  
 }

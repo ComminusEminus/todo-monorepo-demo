@@ -1,6 +1,6 @@
 import React from 'react'
-import {ITodoListAsListDescription, ListsItem} from '@ui/todo-lists'
-
+import {ListsItem} from './index'
+import {ITodoListAsListDescription} from '@core/entities'
 
 interface ITodoLists{
     lists: ITodoListAsListDescription[];

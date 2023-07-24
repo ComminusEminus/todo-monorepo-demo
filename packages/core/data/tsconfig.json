@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "../domain/entities/tsconfig.json" 
+      },
+      { 
+        "path": "../domain/abstractions/tsconfig.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}

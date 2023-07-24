@@ -1,1 +1,1 @@
-export {AnimationWrapper, PageAnimationWrapper, DeleteItemAnimationWrapper, AnimationWrapperProps} from './AnimationWrapper'
+export {AnimationWrapper, PageAnimationWrapper, DeleteItemAnimationWrapper} from './AnimationWrapper'

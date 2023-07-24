@@ -1,10 +1,10 @@
 import React from "react";
 import {ButtonState} from './ButtonState'
-import {ButtonStyle, OutlineButtonStyle, TextButtonStyle, SvgButtonStyle} from './Button.style'
+import {ButtonStyle, OutlineButtonStyle, TextButtonStyle, SvgButtonStyle, ButtonStyleProps} from './Button.style'
 
 //-----------------Button Interface
 
-export interface ButtonProps {
+interface ButtonProps extends ButtonStyleProps {
     mt?: string;
     mb?: string;
     ml?: string;
@@ -24,6 +24,10 @@ export interface ButtonProps {
     color?: string;
     text?: string;
     value?: string;
+}
+
+export type{
+    ButtonProps
 }
 
 //------------------Button

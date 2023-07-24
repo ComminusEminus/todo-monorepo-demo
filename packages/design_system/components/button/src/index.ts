@@ -1,4 +1,4 @@
-export {Button, OutlineButton, TextButton, SvgButton, ButtonProps} from './Button'
-export {ButtonState} from './ButtonState'
-export {ButtonStyle, OutlineButtonStyle, TextButtonStyle, SvgButtonStyle, ButtonStyleProps} from './Button.style'
+export {Button, OutlineButton, TextButton, SvgButton, type ButtonProps} from './Button'
+export {ButtonState, type ButtonStateProps} from './ButtonState'
+export {ButtonStyle, OutlineButtonStyle, TextButtonStyle, SvgButtonStyle} from './Button.style'
 

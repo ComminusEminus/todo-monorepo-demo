@@ -6,6 +6,7 @@ import {shadow} from './shadow'
 import {breakpoints} from './breakpoints'
 import {opacityState} from './opacityState'
 
+
 export const BaseTheme: DefaultTheme = {
     colors: colors,
     space: space,

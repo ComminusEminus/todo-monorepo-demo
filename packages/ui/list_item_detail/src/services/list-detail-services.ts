@@ -1,13 +1,6 @@
 import {ITodoListItem, IAxiosResponse} from '@core/entities'
 
-export interface IMapListItemDetailView{
-    id: string;
-    title: string;
-    description: string;
-    complete: string;
-}
-
-export const mapListItemDetailView = (response: IAxiosResponse): IMapListItemDetailView => {
+export const mapListItemDetailView = (response: IAxiosResponse): ITodoListItem => {
     const {data}  = response;
     const mappedResponse = response.data.map((list: ITodoListItem) => {
         return {

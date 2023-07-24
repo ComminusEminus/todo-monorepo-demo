@@ -1,1 +1,0 @@
-{"version":3,"file":"delete-todo-usecase.d.ts","sourceRoot":"","sources":["../../../../../../../packages/core/domain/domain_logic/src/todo_list_usecase/delete-todo-usecase.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,mBAAmB,EAAC,MAAM,oBAAoB,CAAA;AAEtD,qBAAa,qBAAqB;IAClB,OAAO,CAAC,QAAQ,CAAC,UAAU;gBAAV,UAAU,EAAE,mBAAmB;IAI/C,OAAO,CAAC,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM;CAGtD"}

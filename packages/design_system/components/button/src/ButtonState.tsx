@@ -1,7 +1,7 @@
 import * as React from "react";
-import {ButtonStateStyle} from './ButtonState.style'
+import {ButtonStateStyle, ButtonStateStyleProps} from './ButtonState.style'
 
-interface ButtonStateProps {
+interface ButtonStateProps extends ButtonStateStyleProps {
     mt?: string;
     mb?: string;
     ml?: string;
@@ -14,7 +14,9 @@ interface ButtonStateProps {
     children: JSX.Element | JSX.Element[];
 }
 
-
+export type{
+    ButtonStateProps
+}
 export function ButtonState(props: ButtonStateProps){
     return(
         <ButtonStateStyle

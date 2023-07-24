@@ -1,11 +1,11 @@
-import React, {InputHTMLAttributes, ChangeEventHandler} from 'react'
+import React, { InputHTMLAttributes, ChangeEventHandler } from 'react'
 import styled from 'styled-components'
 
-import {InputStyle} from './Input.style'
-import {Fieldset} from '@design/fieldset'
+import { InputStyle } from './Input.style'
+import { Fieldset } from '@design/fieldset'
 
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     border?: string;
     type?: React.HTMLInputTypeAttribute;
     id?: string;
@@ -23,42 +23,25 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
 
 
 export const Input = (props: InputProps): JSX.Element => {
-    if(props.error){
-        return(
-            <>
-                <InputStyle 
-                    type = {props.type}
-                    id = {props.id}
-                    name = {props.name}
-                    required = {props.required || false}
-                    minLength = {props.minLength}
-                    maxLength = {props.maxLength}
-                    placeholder = {props.placeholder}
-                    value = {props.value}
-                    onChange = {props.onChange}
-                    {...props.register(props.name)}
-                />    
-                <span>{props.error}</span>
-            </>
-        )
-    }else{
-        return(
-            <InputStyle 
-                    type = {props.type}
-                    id = {props.id}
-                    name = {props.name}
-                    required = {props.required || false}
-                    minLength = {props.minLength}
-                    maxLength = {props.maxLength}
-                    size = {props.size}
-                    placeholder = {props.placeholder}
-                    value = {props.value}
-                    onChange = {props.onChange}
-                    {...props.register(props.name)}
-                />    
-        )
-    }
-    
+
+    return (
+        <>
+            <InputStyle
+                type={props.type}
+                id={props.id}
+                name={props.name}
+                required={props.required || false}
+                minLength={props.minLength}
+                maxLength={props.maxLength}
+                placeholder={props.placeholder}
+                value={props.value}
+                onChange={props.onChange}
+                {...props.register(props.name)}
+            />
+            {props.error && <span>{props.error}</span>}
+        </>
+    )
+
 }
 
 

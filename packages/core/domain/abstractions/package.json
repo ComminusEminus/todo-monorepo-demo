@@ -6,6 +6,15 @@
     "dependencies" : {
 		"@core/entities" : "^1.0.0"
 	},
-	"main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts"
+	"scripts": {
+		"build": "tsc --declaration --emitDeclarationOnly"
+	},
+	"module": "dist/src/index.ts",
+    "main": "dist/src/index.ts",
+	"types":"types/packages/core/domain/abstractions/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/todo-list-item-repository.ts", "./src/todolistrepository.ts", "./src/userrepository.ts"]
+		}
+	}
 }	

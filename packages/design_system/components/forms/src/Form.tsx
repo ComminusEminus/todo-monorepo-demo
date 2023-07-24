@@ -28,7 +28,7 @@ export const Form = ({children, onSubmit}: IFormProps): JSX.Element => {
                     type = 'submit'
                     alignSelf = 'flex-start'
                     buttonStyle = 'success'
-                    children = 'Submit'
+                    text = 'Submit'
                     size = 'sm'
                     color = {theme.colors.neutral.onBackground}
                     buttonStateWidth = '100%'

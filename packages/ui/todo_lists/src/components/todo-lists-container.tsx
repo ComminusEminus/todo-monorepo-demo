@@ -1,5 +1,6 @@
 import React from 'react'
-import {useGetAllTodoListsState, MapTodoLists} from '@ui/todo-lists'
+import {useGetAllTodoListsState} from '../hooks/index'
+import {MapTodoLists} from './index'
 import {Text} from '@design/text'
 import {Container} from '@design/container'
 import {useTheme} from 'styled-components'

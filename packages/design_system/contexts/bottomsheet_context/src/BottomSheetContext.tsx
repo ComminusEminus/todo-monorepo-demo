@@ -1,5 +1,4 @@
 import React, { useContext, createContext } from 'react';
-import {BottomSheet} from '@design/BottomSheet'
 import {useOpenCloseController} from '@design/useOpenCloseController'
 
 export interface BottomSheetContextProps{

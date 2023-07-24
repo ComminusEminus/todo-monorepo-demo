@@ -1,8 +1,3 @@
-import {ITodoListRepository} from './todolistrepository'
-import {IUserRepository} from './userrepository'
-import {ITodoListItemRepository} from './todo-list-item-repository'
-export {
-    ITodoListRepository,
-    IUserRepository,
-    ITodoListItemRepository
-}
+export {ITodoListRepository} from './todolistrepository'
+export { IUserRepository} from './userrepository'
+export {ITodoListItemRepository} from './todo-list-item-repository'

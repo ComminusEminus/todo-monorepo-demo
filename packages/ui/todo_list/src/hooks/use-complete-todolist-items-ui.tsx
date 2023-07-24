@@ -1,8 +1,8 @@
 import {useRef, useEffect} from 'react'
 import {useCompleteTodoListItem} from './use-complete-todolist-items'
-import {ListItemStatus} from '@todo/constants'
-import {useListItemContext} from '@todo/ui-context'
-import {ITodoListItem} from '@todo/entities'
+import {ListItemStatus} from '@core/entities'
+import {useListItemContext} from '@ui/contexts'
+import {ITodoListItem} from '@core/entities'
 
 export const useCompleteTodoListItemUI = () => {
     const {apiHandler} = useCompleteTodoListItem()
@@ -31,5 +31,5 @@ export const useCompleteTodoListItemUI = () => {
     }, [completeState])
     
 
-    return {completeState, completeHandler} as const 
+    return {completeState, completeHandler} 
 }

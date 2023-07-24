@@ -1,7 +1,6 @@
 import React, {createContext, useState, useContext} from 'react';
-import {IUser} from '@core/entities'
-import {ITodoListAsListDescription} from '@ui/todo-lists'
-import {IMappedUserProfile} from '@ui/user'
+import {IMappedUserProfile} from '@core/entities'
+
 export interface IUIContext{
     addNewListItemForm?: string; 
     setAddNewListItemForm: (arg: string) => void;
@@ -36,7 +35,7 @@ export const UIContext = createContext<IUIContext>(defaultState);
 
 export const useUIContext = () => {
     const {...value} = useContext<IUIContext>(UIContext) 
-    return {...value} as const 
+    return {...value} 
 }
 
 export interface IUIProvider{

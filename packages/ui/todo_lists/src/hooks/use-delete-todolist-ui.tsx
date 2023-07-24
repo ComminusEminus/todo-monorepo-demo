@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react'
-import {useDeleteTodoListHandler} from '@ui/todo-lists'
-import {Visibility} from '@core/entites'
+import {useDeleteTodoListHandler} from './index'
+import {Visibility} from '@core/entities'
 import {useListsContext} from '@ui/contexts'
 
 export const useDeleteTodoListUI = () => {

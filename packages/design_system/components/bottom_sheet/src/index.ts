@@ -1,2 +1,2 @@
-export {BottomSheet, BottomSheetProps} from './BottomSheet'
-export {BottomSheetStyle, BottomSheetStyleProps} from './BottomSheet.style'
+export {BottomSheet} from './BottomSheet'
+export {BottomSheetStyle} from './BottomSheet.style'

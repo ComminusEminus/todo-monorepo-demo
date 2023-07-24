@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {useUIContext} from '@todo/ui-context';
-import {deleteListItem} from '@todo/di'
+import {useUIContext} from '@ui/contexts';
+import {deleteListItem} from '@core/di'
 
 
 export const useDeleteTodoListItem = () => {
@@ -18,5 +18,5 @@ export const useDeleteTodoListItem = () => {
             console.log('An error occured deleting list item')
         }
     }
-    return {apiHandler} as const 
+    return {apiHandler} 
 }

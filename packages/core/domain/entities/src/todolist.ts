@@ -1,4 +1,4 @@
-import { ITodoListItem } from "./todolistitem";
+import {ITodoListItem } from "./todolistitem";
 
 export interface ITodoList {
     id: string;
@@ -9,3 +9,4 @@ export interface ITodoList {
 export interface IAddNewTodoListFormResponse{
     title: string
 }
+

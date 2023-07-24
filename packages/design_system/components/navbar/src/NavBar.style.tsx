@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components'
-import {ContainerStyle, ContainerStyleProps} from '@design/container'
+import {ContainerStyle} from '@design/container'
 
-export interface NavBarStyleProps extends ContainerStyleProps{
+export interface NavBarStyleProps{
     position?: string;
 }
 

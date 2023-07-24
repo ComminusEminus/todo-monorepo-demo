@@ -1,2 +1,2 @@
-export {Card} from './Card'
-export {CardStyle} from './Card.style'
+export {Card} from './Card.js'
+export {CardStyle} from './Card.style.js'

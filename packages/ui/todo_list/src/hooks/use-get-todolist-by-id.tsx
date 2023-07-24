@@ -1,6 +1,7 @@
-import {useUIContext} from '@todo/ui-context'
-import {mapToListDescription, ITodoListItemDescription} from '@todo/todolist-ui-services'
-import {getTodoListById} from '@todo/di'
+import {useUIContext} from '@ui/contexts'
+import {ITodoListItemDescription} from '@core/entities'
+import {mapToListDescription} from '../services/todolist-ui-services'
+import {getTodoListById} from '@core/di'
 import {useEffect, useState} from 'react'
 
 
@@ -28,5 +29,5 @@ export const useGetTodoListById = () => {
         getTodoList()
     }, [viewTodoList])
 
-    return {todoList} as const 
+    return {todoList} 
 }

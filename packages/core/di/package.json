@@ -8,6 +8,18 @@
 		"@core/domain-logic" : "^1.0.0",
 		"@core/data" : "^1.0.0"
 	},
-	"main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts"
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/injection.ts"],
+			"require": ["./dist/index.js", "./dist/injection.js"]
+		}
+	},
+	"types":"types/src/index.d.ts",
+	"main": "src/index.ts",
+	"module": "src/index.ts"
 }	

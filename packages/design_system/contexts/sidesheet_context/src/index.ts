@@ -1,1 +1,1 @@
-export {SideSheetContext, SideSheetProvider, useSideSheetContext} from './SideSheetContext'
+export {SideSheetContext, SideSheetProvider, useSideSheetContext} from './SideSheetContext.js'

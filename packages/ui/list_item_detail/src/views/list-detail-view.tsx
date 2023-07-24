@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container} from '@design/container'
-import {DisplayListItemDetails} from '@ui/list-item-detail'
+import {DisplayListItemDetails} from '../components/display-list-item-details'
 import {useTheme} from 'styled-components'
 
 export const ListDetailView = () => {

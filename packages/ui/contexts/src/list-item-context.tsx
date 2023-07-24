@@ -1,7 +1,7 @@
 import React, {createContext, useRef, useState, useContext, useEffect} from 'react';
-import {ITodoListItem, ListItemStatus, Visibility} from '@core/entities'
-import {useUIContext} from '@ui/contexts'
-import {mapToListDescription, ITodoListItemDescription} from '@ui/todo-list'
+import {ITodoListItem, ListItemStatus, Visibility, ITodoListItemDescription} from '@core/entities'
+import {useUIContext} from './ui-context'
+
 export interface IListItemContext{
     originalState?: ITodoListItemDescription;
     setCompleteState?: (arg: ListItemStatus.INCOMPLETE | ListItemStatus.COMPLETED| undefined)=> void ;
@@ -18,7 +18,7 @@ const defaultState = {
       id: '',
       title: '',
       description: '',
-      complete: ''
+      complete: ListItemStatus.INCOMPLETE
     },
     setCompleteState: () => null,
     completeState: undefined,
@@ -32,7 +32,7 @@ export const ListItemContext = createContext<IListItemContext >(defaultState);
 
 export const useListItemContext = () => {
     const {...value} = useContext<IListItemContext >(ListItemContext) 
-    return {...value} as const 
+    return {...value} 
 }
 
 export interface IListItemProvider{

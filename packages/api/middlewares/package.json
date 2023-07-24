@@ -1,0 +1,22 @@
+{
+	"name": "@api/middlewares",
+	"version": "1.0.0",
+
+	"description": "",
+    "dependencies" : {
+		"@api/models" : "^1.0.0"
+	},
+	"types": "types/packages/api/middlewares/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/auth.ts"],
+			"require": ["./dist/index.js", "./dist/auth.js"]
+		}
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	}
+}	

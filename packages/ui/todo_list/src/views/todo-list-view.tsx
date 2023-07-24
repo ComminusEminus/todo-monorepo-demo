@@ -1,6 +1,6 @@
 import React from 'react'
-import {Container} from '@design/monorepo'
-import {TodoListItemContainer} from '@todo/todolist-components'
+import {Container} from '@design/container'
+import {TodoListItemContainer} from '../components/index'
 import {useTheme} from 'styled-components'
 
 export const TodoListView = () => {

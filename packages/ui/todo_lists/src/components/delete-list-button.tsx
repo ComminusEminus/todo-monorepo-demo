@@ -1,8 +1,6 @@
 import React from 'react'
-import {useDeleteTodoListUI} from '@ui/todo-list'
-import {ListItemStatus} from '@core/entities'
+import {useDeleteTodoListUI} from '../hooks/use-delete-todolist-ui'
 import {Button} from '@design/buttons'
-import {useTheme} from 'styled-components'
 
 export const DeleteListButton = () => {
     const {visibilityState, visibilityHandler} = useDeleteTodoListUI()

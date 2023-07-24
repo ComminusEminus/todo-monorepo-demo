@@ -1,8 +1,19 @@
 {
 	"name": "@core/entities",
 	"version": "1.0.0",
-	"type": "module",
+
 	"description": "Interfaces for domain",
-	"main": "dist/src/index.js",
-	"types": "dist/src/index.d.ts"
+	"module": "src/index.ts",
+    "main": "src/index.ts",
+	"types": "types/packages/core/domain/entities/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts"],
+			"require": ["./dist/index.js"]
+		}
+	},
+	"scripts": {
+		"build": "tsc --declaration --emitDeclarationOnly",
+		"transpile": "babel -d dist/ --extensions .ts src/"
+	}
 }	

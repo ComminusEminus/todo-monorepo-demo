@@ -1,22 +1,26 @@
-import React, {useState, useEffect} from 'react'
-import {filterCompletedListItems, filterIncompleteListItems} from '@todo/todolist-ui-services'
-import {Filter} from '@todo/constants'
-import {useListContext} from '@todo/ui-context'
+import React, {useState, useEffect, FC} from 'react'
+import {filterCompletedListItems, filterIncompleteListItems} from '../services/todolist-ui-services'
+import {Filter} from '@core/entities'
+import {ITodoListItemDescription} from '@core/entities'
 
-export const useFilterTodoListItems = () => {
-    const {todoList, setDisplayListItem} = useListContext()
+export interface IUseFilterTodoListItems{
+    list?: ITodoListItemDescription[]
+}
+
+export const useFilterTodoListItems = (list: ITodoListItemDescription[]) => {
+//    const {todoList, setDisplayListItem} = useListContext()
     const [filterListState, setFilterListState] = useState<string>(Filter.ALL_LIST_ITEMS)
-
+    const [filteredList, setFilteredList] = useState<Array<ITodoListItemDescription> | undefined>(list)
     useEffect(() => {
-        if(todoList === undefined){
+        if(list === undefined){
             return;
         }
         if(filterListState === Filter.ALL_LIST_ITEMS){
-            setDisplayListItem?.(todoList)
+            setFilteredList?.(list)
         }else if(filterListState === Filter.COMPLETE_LIST_ITEMS){
-            setDisplayListItem?.(filterCompletedListItems(todoList))
+            setFilteredList?.(filterCompletedListItems(list))
         }else if(filterListState === Filter.INCOMPLETE_LIST_ITEMS){
-            setDisplayListItem?.(filterIncompleteListItems(todoList))
+            setFilteredList?.(filterIncompleteListItems(list))
         }
         
     }, [filterListState])
@@ -26,6 +30,6 @@ export const useFilterTodoListItems = () => {
         setFilterListState(filter);
     }
 
-    return {filterListHandler} as const;
+    return {filterListHandler, filteredList} ;
 
 }

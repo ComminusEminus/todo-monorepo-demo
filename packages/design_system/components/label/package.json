@@ -1,6 +1,30 @@
 {
 	"name": "@design/label",
 	"version": "1.0.0",
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"browser": "dist/src/index.js",
+	"module": "dist/src/index.js",
 	"description": "",
-	"main": "index.ts"
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/Label.tsx", "./src/Label.style.tsx" ],
+			"require": ["./dist/index.js", "./dist/Label.js", "./dist/Label.style.js"]
+		}
+	},
+	"type": "module",
+	"main": "index.ts",
+	"types": "types/packages/design_system/components/label/src/index.d.ts",
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions",
+		"last 2 FirefoxAndroid versions",
+		"last 2 iOS version",
+		"last 2 safari version"
+	]
 }	

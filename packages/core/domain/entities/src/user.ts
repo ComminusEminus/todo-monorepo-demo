@@ -5,3 +5,15 @@ export interface IUser{
     password: string;
     id: string;
 }
+
+export interface IMapUserProfile{
+    data: IUser;
+}
+
+export interface IMappedUserProfile{
+    id: string;
+    userName: string;
+    firstName: string;
+    lastName: string;
+}
+
