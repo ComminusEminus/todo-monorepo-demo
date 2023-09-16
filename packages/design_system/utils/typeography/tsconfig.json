@@ -1,6 +1,6 @@
 {
     "extends": "./tsconfig.base.json",
-    "include": ["src", "./src/fonts.d.ts", "./src/AlbertSans_Bold.ttf", "./src/Barlow_ExtraLight.ttf"],
+    "include": ["src", "./src/fonts.ts", "./fonts/Albert_Sans/AlbertSans_Bold.ttf", "./fonts/Barlow/Barlow_ExtraLight.ttf"],
     "compilerOptions": {
       "composite": true,
     }

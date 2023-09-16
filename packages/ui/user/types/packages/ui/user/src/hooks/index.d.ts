@@ -1,2 +1,3 @@
-export * from './use-create-new-user-profile';
-export * from './use-logout-user';
+export * from './api/use-logout-user';
+export * from './ui-interactions/use-logout-user-update-observer';
+export * from './ui-interactions/use-switch-page';

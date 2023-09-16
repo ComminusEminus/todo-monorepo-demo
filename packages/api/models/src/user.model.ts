@@ -1,5 +1,6 @@
 import mongoose, {Types, Schema, Model, Document, InferSchemaType } from 'mongoose';
 import crypto from 'crypto';
+
 //import {IUser as IUserBase} from '@core/entities'
 export interface IUser{
   firstName: string;

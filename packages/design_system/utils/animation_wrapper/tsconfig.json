@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src", "../../utils/theme/types/packages/design_system/utils/theme/src/styled.d.ts"],
+    "exclude": [
+      "./src/__stories__/*"
+    ],
+    "references": [
+      { 
+        "path": "../animations/tsconfig.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}

@@ -9,4 +9,4 @@ Object.defineProperty(exports, "useOpenCloseController", {
     return _useOpenCloseController.useOpenCloseController;
   }
 });
-var _useOpenCloseController = require("./useOpenCloseController.js");
+var _useOpenCloseController = require("./useOpenCloseController");

@@ -3,16 +3,10 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "loginStrategy", {
+Object.defineProperty(exports, "verifyToken", {
   enumerable: true,
   get: function get() {
-    return _auth.loginStrategy;
+    return _verifyToken.verifyToken;
   }
 });
-Object.defineProperty(exports, "verificationStrategy", {
-  enumerable: true,
-  get: function get() {
-    return _auth.verificationStrategy;
-  }
-});
-var _auth = require("./auth.js");
+var _verifyToken = require("./verify-token.js");

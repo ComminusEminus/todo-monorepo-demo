@@ -6,13 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.userRouter = void 0;
 var _controllers = require("@api/controllers");
 var _express = require("express");
-var _passport = _interopRequireDefault(require("passport"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _entities = require("@core/entities");
+var _middlewares = require("@api/middlewares");
 var userRouter = (0, _express.Router)();
 exports.userRouter = userRouter;
-userRouter.post('/createUser', _passport["default"].authenticate('signup', {
-  session: false
-}), _controllers.createNewUser);
-userRouter.post('/login', _controllers.loginUser);
-userRouter.post('/logout', _controllers.logoutUser);
-userRouter.post('/updateProfile', _controllers.updateUserProfile);
+userRouter.post("/" + _entities.URLS.USER_CREATE, _controllers.createNewUser);
+userRouter.post("/" + _entities.URLS.USER_LOGIN, _controllers.loginUser);
+userRouter.post("/" + _entities.URLS.USER_LOGOUT, _middlewares.verifyToken, _controllers.logoutUser);
+userRouter.post("/" + _entities.URLS.USER_UPDATE, _middlewares.verifyToken, _controllers.updateUserProfile);

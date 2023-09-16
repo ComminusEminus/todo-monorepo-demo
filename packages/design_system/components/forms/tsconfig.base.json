@@ -20,6 +20,6 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
-    "outDir": "./types"
+    "outDir": "./types",
   }
 }

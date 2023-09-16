@@ -3,36 +3,47 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "NavBarBottom", {
-  enumerable: true,
-  get: function () {
-    return _NavBar2.NavBarBottom;
-  }
+var _NavBar = require("./style/NavBar.style");
+Object.keys(_NavBar).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _NavBar[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _NavBar[key];
+    }
+  });
 });
-Object.defineProperty(exports, "NavBarLayoutBottom", {
-  enumerable: true,
-  get: function () {
-    return _NavBarLayout.NavBarLayoutBottom;
-  }
+var _NavBarTop = require("./presentation/NavBarTop");
+Object.keys(_NavBarTop).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _NavBarTop[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _NavBarTop[key];
+    }
+  });
 });
-Object.defineProperty(exports, "NavBarLayoutTop", {
-  enumerable: true,
-  get: function () {
-    return _NavBarLayout.NavBarLayoutTop;
-  }
+var _NavBarBottom = require("./presentation/NavBarBottom");
+Object.keys(_NavBarBottom).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _NavBarBottom[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _NavBarBottom[key];
+    }
+  });
 });
-Object.defineProperty(exports, "NavBarStyle", {
-  enumerable: true,
-  get: function () {
-    return _NavBar.NavBarStyle;
-  }
+var _INavBar = require("./interfaces/INavBar");
+Object.keys(_INavBar).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _INavBar[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _INavBar[key];
+    }
+  });
 });
-Object.defineProperty(exports, "NavBarTop", {
-  enumerable: true,
-  get: function () {
-    return _NavBar2.NavBarTop;
-  }
-});
-var _NavBar = require("./NavBar.style");
-var _NavBar2 = require("./NavBar");
-var _NavBarLayout = require("./NavBarLayout");

@@ -17,7 +17,10 @@ var LoginUserContainer = function LoginUserContainer(props) {
     pr: 'sm',
     height: '25%',
     width: '25%',
-    background: theme.colors.neutral.surface
+    background: theme.colors.neutral.surface,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }, props.children);
 };
 exports.LoginUserContainer = LoginUserContainer;

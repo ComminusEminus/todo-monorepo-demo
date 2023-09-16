@@ -69,3 +69,14 @@ Object.keys(_http).forEach(function (key) {
     }
   });
 });
+var _userInterface = require("./user-interface");
+Object.keys(_userInterface).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _userInterface[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _userInterface[key];
+    }
+  });
+});

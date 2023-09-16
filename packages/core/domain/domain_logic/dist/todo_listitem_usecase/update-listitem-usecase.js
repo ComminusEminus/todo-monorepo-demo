@@ -23,14 +23,28 @@ var UpdateListItemUseCase = /*#__PURE__*/function () {
     key: "execute",
     value: function () {
       var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(updateData) {
+        var _id, title, description, complete, data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.updateTodoListItem(updateData);
-            case 2:
-              return _context.abrupt("return", _context.sent);
+              _id = updateData._id, title = updateData.title, description = updateData.description, complete = updateData.complete;
+              if (!(!_id || !title || !description || !complete)) {
+                _context.next = 3;
+                break;
+              }
+              throw new Error('Arguments for update list item are incomplete');
             case 3:
+              data = {
+                _id: _id,
+                title: title,
+                description: description,
+                complete: complete
+              };
+              _context.next = 6;
+              return this.repository.updateTodoListItem(data);
+            case 6:
+              return _context.abrupt("return", _context.sent);
+            case 7:
             case "end":
               return _context.stop();
           }

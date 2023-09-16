@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 export const useOpenCloseController = () => {
     const [sheetState, setSheetState] = useState('loaded')
-    const [animateState, setAnimateState] = useState('static')
+    const [animateState, setAnimateState] = useState<"static" | "animateOpen" | "animateClose">('static')
     
     const sheetHandler = () => {
         console.log('sheetHandler')

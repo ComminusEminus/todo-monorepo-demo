@@ -1,11 +1,11 @@
-import { IHttpClient } from '@core/entities';
+import { HttpClientRepository } from './http-client-repo-imp';
 import { IUserRepository } from '@core/abstractions';
-import { IUser, IAxiosResponse } from '@core/entities';
-export declare class UserRepoImp implements IUserRepository {
-    dataSource: IHttpClient;
-    constructor(dataSource: IHttpClient);
-    loginUser(userName: string, password: string): Promise<IAxiosResponse>;
-    logoutUser(userName: string): Promise<IAxiosResponse>;
-    editUserProfile(userProfile: IUser): Promise<IAxiosResponse>;
-    createUserProfile(userName: string, password: string, firstName: string, lastName: string): Promise<IAxiosResponse>;
+import { INewUserRequestDTO, IUserLoginRequestDTO, IUserProfileUpdateRequestDTO, IHttpResponse } from '@core/entities';
+export declare class UserRepository implements IUserRepository<IHttpResponse> {
+    dataSource: HttpClientRepository;
+    constructor(dataSource: HttpClientRepository);
+    loginUser(data: IUserLoginRequestDTO): Promise<IHttpResponse>;
+    logoutUser(): Promise<IHttpResponse>;
+    editUserProfile(data: IUserProfileUpdateRequestDTO): Promise<IHttpResponse>;
+    createUserProfile(data: INewUserRequestDTO): Promise<IHttpResponse>;
 }

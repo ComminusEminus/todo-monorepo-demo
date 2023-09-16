@@ -1,2 +1,2 @@
-export {SvgIcon} from './SvgIcon.js'
+export {SvgIcon} from './SvgIcon'
 export {SvgIconStyle} from './SvgIcon.style'

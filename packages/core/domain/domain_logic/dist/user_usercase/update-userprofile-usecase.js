@@ -22,15 +22,30 @@ var UpdateUserProfileUseCase = /*#__PURE__*/function () {
   _createClass(UpdateUserProfileUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(userProfile) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(user) {
+        var _id, firstName, lastName, userName, password, data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.editUserProfile(userProfile);
-            case 2:
-              return _context.abrupt("return", _context.sent);
+              _id = user._id, firstName = user.firstName, lastName = user.lastName, userName = user.userName, password = user.password;
+              if (!(!_id || !firstName || !lastName || !userName || !password)) {
+                _context.next = 3;
+                break;
+              }
+              throw new Error('Update user profile is missing id firstname lastname username or password');
             case 3:
+              data = {
+                _id: _id,
+                firstName: firstName,
+                lastName: lastName,
+                userName: userName,
+                password: password
+              };
+              _context.next = 6;
+              return this.repository.editUserProfile(data);
+            case 6:
+              return _context.abrupt("return", _context.sent);
+            case 7:
             case "end":
               return _context.stop();
           }

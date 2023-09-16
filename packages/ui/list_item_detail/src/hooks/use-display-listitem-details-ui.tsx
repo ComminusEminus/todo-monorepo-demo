@@ -4,19 +4,16 @@ import React, {useEffect, useState, useRef} from 'react'
 import {ITodoListItem} from '@core/entities'
 
 export const useDisplayListItemDetailsUI = () => {
-    const {viewTodoListItem, userProfile} = useUIContext()
-    const {handler, displayItem} = useDisplayListItemDetails()
-
+    const {state, dispatch} = useUIContext()
+    const {fetchListItemDetails, displayItem} = useDisplayListItemDetails()
+    const {selectedTodoListItemId} = state
     useEffect(() => {
-        if(!userProfile){
+        if(!selectedTodoListItemId){
             return;
         }
-        if(!viewTodoListItem){
-            return;
-        }
-        handler(viewTodoListItem)
+        fetchListItemDetails(selectedTodoListItemId)
         
-    },[viewTodoListItem])
+    },[selectedTodoListItemId])
 
     return {displayItem} as const 
 }

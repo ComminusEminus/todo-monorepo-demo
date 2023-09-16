@@ -1,3 +1,3 @@
 export declare const useFormDisplay: () => {
-    readonly formsState: string | undefined;
+    readonly formType: import("packages/core/domain/entities/types/packages/core/domain/entities/src").FormType | null | undefined;
 };

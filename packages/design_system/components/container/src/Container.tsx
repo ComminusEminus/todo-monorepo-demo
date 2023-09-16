@@ -1,15 +1,16 @@
 import React from 'react'
-import {ContainerStyle, ContainerStyleProps} from './Container.style'
-
-export interface ContainerProps extends ContainerStyleProps{
-    onClick?: any;
-    children?: JSX.Element | JSX.Element[] | string;
-}
+import {ContainerStyle} from './Container.style'
+import type {ContainerStyleProps} from './IContainerStyleProps'
+import type {ContainerProps} from './IContainerProps'
 
 
 export const Container = (props: ContainerProps) => {
     return (
         <ContainerStyle
+            flex = {props.flex}
+            overflowx = {props.overflowx}
+            overflowy = {props.overflowy}
+            overflow = {props.overflow}
             width = {props.width}
             height = {props.height}
             pt = {props.pt}
@@ -20,6 +21,7 @@ export const Container = (props: ContainerProps) => {
             mt = {props.mt}
             mr = {props.mr}
             ml = {props.ml}
+            padding = {props.padding}
             background = {props.background}
             display = {props.display}
             flexDirection ={props.flexDirection}
@@ -34,6 +36,7 @@ export const Container = (props: ContainerProps) => {
             borderRadius = {props.borderRadius}
             maxHeight = {props.maxHeight}
             boxSizing = {props.boxSizing}
+            border = {props.border}
         >
             {props.children}
         </ContainerStyle>

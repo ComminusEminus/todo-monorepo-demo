@@ -14,3 +14,14 @@ Object.keys(_loginUserContainer).forEach(function (key) {
     }
   });
 });
+var _logoutButton = require("./logout-button");
+Object.keys(_logoutButton).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _logoutButton[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _logoutButton[key];
+    }
+  });
+});

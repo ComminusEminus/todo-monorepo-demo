@@ -1,0 +1,29 @@
+{
+	"name": "@design/animations",
+	"version": "1.0.0",
+	"description": "Parent component to handle animation changes",
+	"module": "src/index.ts",
+	"browser": "dist/index.js",
+    "main": "src/index.ts",
+	"types": "types/packages/design_system/utils/animations/src/index.d.ts",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/deleteItemAnimation.tsx", "./src/openCloseAnimation.tsx", "./src/outInAnimation.tsx", "./src/pageChangeAnimation.tsx", "./src/slideOpenCloseAnimation.tsx", "./src/slideOpenCloseScrimAnimation.tsx"],
+			"require": ["./dist/index.js", "./dist/deleteItemAnimation.js", "./dist/openCloseAnimation.js", "./dist/outInAnimation.js", "./dist/pageChangeAnimation.js", "./dist/slideOpenCloseAnimation.js", "./dist/slideOpenCloseScrimAnimation.js"]
+		}
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions",
+		"last 2 FirefoxAndroid versions",
+		"last 2 iOS version",
+		"last 2 safari version"
+	]
+}	

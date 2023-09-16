@@ -13,7 +13,8 @@
 		}
 	},
 	"scripts": {
-		"build": "tsc --declaration --emitDeclarationOnly",
-		"transpile": "babel -d dist/ --extensions .ts src/"
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
 	}
 }	

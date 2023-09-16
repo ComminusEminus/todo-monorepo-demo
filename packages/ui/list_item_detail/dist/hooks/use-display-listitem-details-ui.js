@@ -9,20 +9,18 @@ var _contexts = require("@ui/contexts");
 var _react = require("react");
 var useDisplayListItemDetailsUI = function useDisplayListItemDetailsUI() {
   var _useUIContext = (0, _contexts.useUIContext)(),
-    viewTodoListItem = _useUIContext.viewTodoListItem,
-    userProfile = _useUIContext.userProfile;
+    state = _useUIContext.state,
+    dispatch = _useUIContext.dispatch;
   var _useDisplayListItemDe = (0, _useDisplayListitemDetails.useDisplayListItemDetails)(),
-    handler = _useDisplayListItemDe.handler,
+    fetchListItemDetails = _useDisplayListItemDe.fetchListItemDetails,
     displayItem = _useDisplayListItemDe.displayItem;
+  var selectedTodoListItemId = state.selectedTodoListItemId;
   (0, _react.useEffect)(function () {
-    if (!userProfile) {
+    if (!selectedTodoListItemId) {
       return;
     }
-    if (!viewTodoListItem) {
-      return;
-    }
-    handler(viewTodoListItem);
-  }, [viewTodoListItem]);
+    fetchListItemDetails(selectedTodoListItemId);
+  }, [selectedTodoListItemId]);
   return {
     displayItem: displayItem
   };

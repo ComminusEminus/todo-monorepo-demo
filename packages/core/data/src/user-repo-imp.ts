@@ -1,54 +1,50 @@
-import {IHttpClient} from '@core/entities'
+import {HttpClientRepository} from './http-client-repo-imp'
 import {IUserRepository} from '@core/abstractions'
-import {IUser, IAxiosResponse} from '@core/entities'
+import {
+    INewUserRequestDTO,
+    IUserLoginRequestDTO,
+    ILogoutRequestDTO,
+    IUserProfileUpdateRequestDTO,
+    URLS,
+    IHttpResponse
+} from '@core/entities'
 
-export class UserRepoImp implements IUserRepository{
-    dataSource: IHttpClient;
 
-    constructor(dataSource: IHttpClient){
+export class UserRepository implements IUserRepository<IHttpResponse>{
+    dataSource: HttpClientRepository;
+
+    constructor(dataSource: HttpClientRepository){
         this.dataSource = dataSource
     }
 
-    async loginUser(userName: string, password: string): Promise<IAxiosResponse>{
+    async loginUser(data: IUserLoginRequestDTO): Promise<IHttpResponse>{
         const params = {
-            url: 'user/login',
-            data: {
-                userName: userName,
-                password: password
-            }
+            url: URLS.USER_LOGIN,
+            data: {...data}
         }
         return await this.dataSource.post(params)
         
     };
-    async logoutUser(userName: string): Promise<IAxiosResponse>{
+    async logoutUser(): Promise<IHttpResponse>{
         const params = {
-            url: 'user/logout',
-            data: {
-                userName: userName
-            }
+            url: URLS.USER_LOGOUT,
+            data: {}
         } 
         return await this.dataSource.post(params)
         
     };
-    async editUserProfile(userProfile: IUser): Promise<IAxiosResponse>{
+    async editUserProfile(data: IUserProfileUpdateRequestDTO): Promise<IHttpResponse>{
         const params = {
-            url: 'user/updateProfile',
-            data: {
-                userProfile: userProfile
-            }
+            url: URLS.USER_UPDATE,
+            data: {...data}
         }
-        return await this.dataSource.put(params)
+        return await this.dataSource.post(params)
         
     };
-    async createUserProfile(userName: string, password: string, firstName: string, lastName:string): Promise<IAxiosResponse>{
+    async createUserProfile(data: INewUserRequestDTO): Promise<IHttpResponse>{
         const params = {
-            url: 'user/createUser',
-            data: {
-                userName: userName,
-                password: password,
-                firstName: firstName,
-                lastName: lastName
-            }
+            url: URLS.USER_CREATE,
+            data: {...data}
         } 
         return await this.dataSource.post(params)
         

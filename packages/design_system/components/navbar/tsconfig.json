@@ -1,6 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
   "include": ["src", "../../utils/theme/types/packages/design_system/utils/theme/src/styled.d.ts"],
+  "exclude": [
+    "./src/__stories__/*"
+  ],
     "references": [
       { 
         "path": "../../utils/icons/tsconfig.json" 
@@ -9,9 +12,20 @@
         "path": "../button/tsconfig.json" 
       },
       { 
+        "path": "../svg_icon/tsconfig.json" 
+      },
+      { 
         "path": "../container/tsconfig.json" 
       },
-
+      { 
+        "path": "../../utils/animations/tsconfig.json" 
+      },
+      { 
+        "path": "../../hooks/use_open_close_controller/tsconfig.json" 
+      },
+      { 
+        "path": "../../utils/sidesheet/tsconfig.json" 
+      },
     ],
     "compilerOptions": {
       "composite": true,

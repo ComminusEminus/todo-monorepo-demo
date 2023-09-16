@@ -1,14 +1,11 @@
 import {createNewUser, loginUser, logoutUser, updateUserProfile} from '@api/controllers'
 import { Router } from 'express';
-import passport from 'passport';
+import {URLS} from '@core/entities'
+import {verifyToken} from '@api/middlewares'
 
 export const userRouter = Router()
 
-userRouter.post('/createUser', passport.authenticate('signup', { session: false }), createNewUser)
-userRouter.post('/login', loginUser)
-userRouter.post('/logout', logoutUser)
-userRouter.post('/updateProfile', updateUserProfile)
-
-
-
-
+userRouter.post("/" + URLS.USER_CREATE, createNewUser)
+userRouter.post("/" + URLS.USER_LOGIN, loginUser)
+userRouter.post("/" + URLS.USER_LOGOUT, verifyToken, logoutUser)
+userRouter.post("/" + URLS.USER_UPDATE, verifyToken, updateUserProfile)

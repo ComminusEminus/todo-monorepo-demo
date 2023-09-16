@@ -1,10 +1,11 @@
 import { ITodoListItemRepository } from '@core/abstractions';
-import { IAddNewTodoListItemFormResponse, ITodoListItem, IAxiosResponse, IHttpClient } from '@core/entities';
-export declare class TodoListItemRepoImp implements ITodoListItemRepository {
-    dataSource: IHttpClient;
-    constructor(dataSource: IHttpClient);
-    getTodoListItemById(todoListItemId: string): Promise<IAxiosResponse>;
-    updateTodoListItem(updateData: ITodoListItem): Promise<IAxiosResponse>;
-    deleteTodoListItem(listItemId: string, listId: string): Promise<IAxiosResponse>;
-    addTodoListItem(todoListItemId: string, listItem: IAddNewTodoListItemFormResponse): Promise<IAxiosResponse>;
+import { IFindListItemByIdRequestDTO, IUpdateListItemRequestDTO, IDeleteListItemRequestDTO, IAddNewTodoListItemRequestDTO, IHttpResponse } from '@core/entities';
+import { HttpClientRepository } from './http-client-repo-imp';
+export declare class TodoListItemRepository implements ITodoListItemRepository<IHttpResponse> {
+    dataSource: HttpClientRepository;
+    constructor(dataSource: HttpClientRepository);
+    getTodoListItemById(data: IFindListItemByIdRequestDTO): Promise<IHttpResponse>;
+    updateTodoListItem(data: IUpdateListItemRequestDTO): Promise<IHttpResponse>;
+    deleteTodoListItem(data: IDeleteListItemRequestDTO): Promise<IHttpResponse>;
+    addTodoListItem(data: IAddNewTodoListItemRequestDTO): Promise<IHttpResponse>;
 }

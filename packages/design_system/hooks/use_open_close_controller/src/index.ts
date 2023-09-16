@@ -1,1 +1,1 @@
-export {useOpenCloseController} from './useOpenCloseController.js'
+export {useOpenCloseController} from './useOpenCloseController'

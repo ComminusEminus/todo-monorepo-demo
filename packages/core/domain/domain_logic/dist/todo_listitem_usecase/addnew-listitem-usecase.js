@@ -22,21 +22,34 @@ var AddNewListItemUseCase = /*#__PURE__*/function () {
   _createClass(AddNewListItemUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(todoListId, listItem, userId) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(listId, listItem) {
+        var title, description, data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.addTodoListItem(todoListId, listItem);
-            case 2:
-              return _context.abrupt("return", _context.sent);
+              title = listItem.title, description = listItem.description;
+              if (!(!listId || !title || !description)) {
+                _context.next = 3;
+                break;
+              }
+              throw new Error('Add new list item arguments are missing listId, title or description');
             case 3:
+              data = {
+                listId: listId,
+                title: title,
+                description: description
+              };
+              _context.next = 6;
+              return this.repository.addTodoListItem(data);
+            case 6:
+              return _context.abrupt("return", _context.sent);
+            case 7:
             case "end":
               return _context.stop();
           }
         }, _callee, this);
       }));
-      function execute(_x, _x2, _x3) {
+      function execute(_x, _x2) {
         return _execute.apply(this, arguments);
       }
       return execute;

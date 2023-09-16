@@ -1,7 +1,7 @@
-import { IUser, IAxiosResponse } from '@core/entities';
-export interface IUserRepository {
-    loginUser(userName: string, password: string): Promise<IAxiosResponse>;
-    editUserProfile(userProfile: IUser): Promise<IAxiosResponse>;
-    createUserProfile(firstName: string, lastName: string, userName: string, password: string): Promise<IAxiosResponse>;
-    logoutUser(userName: string): Promise<IAxiosResponse>;
+import { INewUserRequestDTO, IUserLoginRequestDTO, IUserProfileUpdateRequestDTO } from '@core/entities';
+export interface IUserRepository<T> {
+    loginUser(data: IUserLoginRequestDTO): Promise<T>;
+    editUserProfile(data: IUserProfileUpdateRequestDTO): Promise<T>;
+    createUserProfile(data: INewUserRequestDTO): Promise<T>;
+    logoutUser(): Promise<T>;
 }

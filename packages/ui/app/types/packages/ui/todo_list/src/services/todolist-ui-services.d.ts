@@ -1,4 +1,9 @@
-import { IAxiosResponse, ITodoListItemDescription } from '@core/entities';
-export declare const mapToListDescription: (response: IAxiosResponse) => ITodoListItemDescription[];
-export declare const filterCompletedListItems: (todoListItems: ITodoListItemDescription[]) => ITodoListItemDescription[];
-export declare const filterIncompleteListItems: (todoListItems: ITodoListItemDescription[]) => ITodoListItemDescription[];
+import { Responses, ITodoListItem, IAddNewListItemResponseDTO, IHttpResponse } from '@core/entities';
+export declare const mapToListDescription: (response: IHttpResponse) => {
+    list: ITodoListItem[];
+    message: Responses.OK | Responses.MISSING_DATA | Responses.DBERROR | Responses.NO_USER;
+    error: any;
+};
+export declare const mapAddNewTodoListItemResponse: (response: IHttpResponse) => IAddNewListItemResponseDTO;
+export declare const filterCompletedListItems: (todoListItems: ITodoListItem[]) => ITodoListItem[];
+export declare const filterIncompleteListItems: (todoListItems: ITodoListItem[]) => ITodoListItem[];

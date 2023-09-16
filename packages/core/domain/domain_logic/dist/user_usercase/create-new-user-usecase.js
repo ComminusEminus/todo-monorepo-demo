@@ -23,14 +23,27 @@ var CreateNewUserUseCase = /*#__PURE__*/function () {
     key: "execute",
     value: function () {
       var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(firstName, lastName, userName, password) {
+        var data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.createUserProfile(firstName, lastName, userName, password);
+              if (!(!firstName || !lastName || !userName || !password)) {
+                _context.next = 2;
+                break;
+              }
+              throw new Error('Create new user is missing firstname, lastname, username or password');
             case 2:
+              data = {
+                firstName: firstName,
+                lastName: lastName,
+                userName: userName,
+                password: password
+              };
+              _context.next = 5;
+              return this.repository.createUserProfile(data);
+            case 5:
               return _context.abrupt("return", _context.sent);
-            case 3:
+            case 6:
             case "end":
               return _context.stop();
           }

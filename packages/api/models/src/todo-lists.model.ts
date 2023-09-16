@@ -1,15 +1,15 @@
 import mongoose, { Schema, Model, Document, Types } from 'mongoose';
 
-export interface ITodoListsDocument extends Document {
+export interface ITodoListContainerDocument extends Document {
     userId: string;
     todoLists: Types.ObjectId[];
 }
 
-export type ITodoListsInput = {
-    userId: ITodoListsDocument['userId']
+export type ITodoListContainerInput = {
+    userId: ITodoListContainerDocument['userId']
 }
 
-export const todoListsSchema = new Schema(
+export const todoListContainerSchema = new Schema(
     {
         userId: {
             type: Schema.Types.String,
@@ -24,5 +24,5 @@ export const todoListsSchema = new Schema(
     }
 )
 
-export const TodoLists: Model<ITodoListsDocument> = mongoose.model<ITodoListsDocument>('TodoLists', todoListsSchema);
+export const TodoListContainer: Model<ITodoListContainerDocument> = mongoose.model<ITodoListContainerDocument>('TodoListContainer', todoListContainerSchema);
 

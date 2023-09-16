@@ -1,11 +1,12 @@
-import { IHttpClient } from '@core/entities';
 import { ITodoListRepository } from '@core/abstractions';
-import { ITodoListItem, IAxiosResponse } from '@core/entities';
-export declare class TodoListRepoImp implements ITodoListRepository {
-    dataSource: IHttpClient;
-    constructor(dataSource: IHttpClient);
-    getAllTodosLists(userId: string): Promise<IAxiosResponse>;
-    addNewTodoList(listData: ITodoListItem, userId: string): Promise<IAxiosResponse>;
-    deleteTodoList(listId: string, userId: string): Promise<IAxiosResponse>;
-    getTodoListById(listId: string): Promise<IAxiosResponse>;
+import { IAddNewListRequestDTO, IDeleteListRequestDTO, IFindListByIdRequestDTO } from '@core/entities';
+import { HttpClientRepository } from './http-client-repo-imp';
+import { IHttpResponse } from '@core/entities';
+export declare class TodoListRepository implements ITodoListRepository<IHttpResponse> {
+    dataSource: HttpClientRepository;
+    constructor(dataSource: HttpClientRepository);
+    getAllTodosLists(): Promise<IHttpResponse>;
+    addNewTodoList(data: IAddNewListRequestDTO): Promise<IHttpResponse>;
+    deleteTodoList(data: IDeleteListRequestDTO): Promise<IHttpResponse>;
+    getTodoListById(data: IFindListByIdRequestDTO): Promise<IHttpResponse>;
 }

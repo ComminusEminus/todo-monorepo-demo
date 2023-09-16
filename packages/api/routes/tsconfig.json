@@ -5,6 +5,9 @@
       { 
         "path": "../controllers/tsconfig.json" 
       },
+      { 
+        "path": "../middlewares/tsconfig.json" 
+      },
     ],
     "compilerOptions": {
       "composite": true,

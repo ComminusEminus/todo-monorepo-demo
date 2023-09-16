@@ -3,7 +3,7 @@ import {Container} from '@design/container'
 import {useTheme} from 'styled-components'
 
 interface ILoginUserContainer{
-    children: JSX.Element;
+    children: JSX.Element | JSX.Element[];
 }
 
 export const LoginUserContainer = (props: ILoginUserContainer) => {
@@ -18,6 +18,9 @@ export const LoginUserContainer = (props: ILoginUserContainer) => {
             height = {'25%'}
             width = {'25%'}
             background = {theme.colors.neutral.surface}
+            flexDirection = {'column'}
+            justifyContent = {'center'}
+            alignItems = {'center'}
         >
            {props.children}
         </Container>

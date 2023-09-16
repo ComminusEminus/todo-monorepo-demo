@@ -4,7 +4,8 @@
 
 	"description": "",
     "dependencies" : {
-		"@api/controllers" : "^1.0.0"
+		"@api/controllers" : "^1.0.0",
+		"@api/middlewares" : "^1.0.0"
 	},
 	"types": "types/packages/api/routes/src/index.d.ts",
 	"exports":  {

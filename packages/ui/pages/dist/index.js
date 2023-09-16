@@ -3,31 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "CreateUserPage", {
-  enumerable: true,
-  get: function get() {
-    return _createUserPage.CreateUserPage;
-  }
+var _dashboard = require("./views/dashboard");
+Object.keys(_dashboard).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _dashboard[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _dashboard[key];
+    }
+  });
 });
-Object.defineProperty(exports, "Dashboard", {
-  enumerable: true,
-  get: function get() {
-    return _dashboard.Dashboard;
-  }
+var _entryPoint = require("./views/entry-point");
+Object.keys(_entryPoint).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _entryPoint[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _entryPoint[key];
+    }
+  });
 });
-Object.defineProperty(exports, "EntryPoint", {
-  enumerable: true,
-  get: function get() {
-    return _entryPoint.EntryPoint;
-  }
-});
-Object.defineProperty(exports, "LoginPage", {
-  enumerable: true,
-  get: function get() {
-    return _loginPage.LoginPage;
-  }
-});
-var _createUserPage = require("./create-user-page");
-var _dashboard = require("./dashboard");
-var _entryPoint = require("./entry-point");
-var _loginPage = require("./login-page");

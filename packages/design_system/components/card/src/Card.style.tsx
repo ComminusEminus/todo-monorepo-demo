@@ -39,7 +39,7 @@ export const CardStyle = styled.div<CardStyleProps>`
                 `
             }else if(props.cardType === 'outline'){
                 return css`
-                    border: ${props.theme.space.sm} solid ${props.theme.colors.primary.baseContainer};
+                    border: ${props.theme.space.xs} solid ${props.theme.colors.primary.baseContainer};
                 `
             }
         }

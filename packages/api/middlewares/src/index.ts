@@ -1,1 +1,1 @@
-export {loginStrategy, verificationStrategy} from './auth.js'
+export {verifyToken} from './verify-token.js'

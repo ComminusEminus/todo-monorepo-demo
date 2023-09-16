@@ -4,8 +4,8 @@ import {TextStyle, TextStyleProps} from './Text.style'
 export interface TextProps extends TextStyleProps{
     text?: string;
     color?: string;
-    fontSize?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-    fontFamily?: 'Albert-Sans' | 'Barlow';
+    fontSize?: string;
+    fontFamily?: 'Albert_Sans' | 'Barlow';
     fontWeight?: string;
 }
 

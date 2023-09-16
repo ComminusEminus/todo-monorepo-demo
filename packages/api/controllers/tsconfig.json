@@ -7,6 +7,12 @@
       },
       { 
         "path": "../services/tsconfig.json" 
+      },
+      { 
+        "path": "../../core/domain/entities/tsconfig.json" 
+      },
+      { 
+        "path": "../middlewares/tsconfig.json" 
       }
     ],
     "compilerOptions": {

@@ -1,15 +1,12 @@
 import mongoose, { Schema, Model, Document, Types } from 'mongoose';
 import {ITodoList} from '@core/entities'
 
-
-
 export type ITodoListInput = {
     title: ITodoList['title'];
 }
 
 export const todoListSchema = new Schema(
     {
-        _id: Schema.Types.ObjectId,
         title:{
             type: Schema.Types.String,
             required: true,

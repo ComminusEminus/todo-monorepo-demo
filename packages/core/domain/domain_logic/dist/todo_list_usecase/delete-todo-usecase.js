@@ -22,21 +22,31 @@ var DeleteTodoListUseCase = /*#__PURE__*/function () {
   _createClass(DeleteTodoListUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(listId, userId) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(listId) {
+        var data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.deleteTodoList(listId, userId);
+              if (listId) {
+                _context.next = 2;
+                break;
+              }
+              throw new Error('Delete list is missing listId');
             case 2:
+              data = {
+                listId: listId
+              };
+              _context.next = 5;
+              return this.repository.deleteTodoList(data);
+            case 5:
               return _context.abrupt("return", _context.sent);
-            case 3:
+            case 6:
             case "end":
               return _context.stop();
           }
         }, _callee, this);
       }));
-      function execute(_x, _x2) {
+      function execute(_x) {
         return _execute.apply(this, arguments);
       }
       return execute;

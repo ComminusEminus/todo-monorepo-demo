@@ -25,3 +25,14 @@ Object.keys(_loginView).forEach(function (key) {
     }
   });
 });
+var _userView = require("./user-view");
+Object.keys(_userView).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _userView[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _userView[key];
+    }
+  });
+});

@@ -1,37 +1,11 @@
 import styled, {css} from 'styled-components'
-
-export interface ContainerStyleProps{
-    height?: string;
-    maxHeight?: string;
-    width?: string;
-    background?: string;
-    display?: string;
-    flexDirection?: string;
-    justifyContent?: string;
-    alignItems?: string;
-    padding?: string;
-    pt?: string;
-    pb?: string;
-    pl?: string;
-    pr?: string;
-    mb?: string;
-    mt?: string;
-    mr?: string;
-    ml?: string;
-    flexGrow?: number;
-    flexShrink?: number;
-    flexBasis?: string;
-    gap?: string;
-    fontFamily?: string;
-    boxSizing?: string;
-    borderRadius?: string;
-    elevation?: string;
-}
-
-
+import type {ContainerStyleProps} from './IContainerStyleProps'
 
 export const ContainerStyle = styled.div<ContainerStyleProps>`
-
+    flex: ${props => props.flex};
+    overflow: ${props => props.overflow};
+    overflow-y: ${props => props.overflowy};
+    overflow-x: ${props => props.overflowx};
     height: ${props => props.height || '100%'};
     max-height: ${props => props.maxHeight};
     width: ${props => props.width || 'auto'};
@@ -56,6 +30,7 @@ export const ContainerStyle = styled.div<ContainerStyleProps>`
     font-family: ${props => props.fontFamily};
     box-sizing: ${props => props.boxSizing || 'border-box'};
     border-radius: ${props => props.borderRadius || 0};
+    border: ${props => props.border || 0};
     ${
         (props) => {
             if(props.elevation === 'sm'){

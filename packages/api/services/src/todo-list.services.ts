@@ -1,46 +1,58 @@
-export interface IMapNewTodoList{
-    listData: INewTodoList;
-    userId: string;
-}
+import mongoose from 'mongoose'
+import {
+    IAddNewListRequestDTO,
+    IDeleteListRequestDTO,
+    IFindListByIdRequestDTO,
+    IGetAllTodoListsRequestDTO
+} from '@core/entities'
 
-interface INewTodoList{
-    title: string;
-}
-export const mapNewTodoList = (body: IMapNewTodoList) => {
-    const {listData, userId} = body;
+export const mapNewTodoList = (body: IAddNewListRequestDTO) => {
+    const {title} = body
+
+    let error = false;
+
+    if(!title){
+        error = true;
+    }
+
     return{
-        title: listData.title,
-        userId: userId
+        title: title,
+        error: error
     }
 }
 
-interface IMapTodoListDeleteRequest{
-    listId: string;
-    userId: string;
-}
 
-export const mapTodoListDeleteRequest = (body: IMapTodoListDeleteRequest) => {
+export const mapTodoListDeleteRequest = (body: IDeleteListRequestDTO) => {
+    const {listId} = body;
+
+    let error = false;
+
+    if(!listId){
+        error = true;
+    }
+
+
+    const mongooseListId = new mongoose.Types.ObjectId(listId)
+
     return{
-        listId: body.listId,
-        userId: body.userId
+        listId: mongooseListId,        
+        error: error
     }
 }
 
-interface IFindListByIdRequest{
-    listId: string;
-}
-export const mapFindListByIdRequest = (body: IFindListByIdRequest) =>{
-    return{
-        listId: body.listId,
+export const mapFindListByIdRequest = (body: IFindListByIdRequestDTO) =>{
+    const {listId} = body;
+    console.log(`mapFindListByIdRequest-todo-list-services: body(below): `)
+    console.log(body)
+    let error = false;
+
+    if(!listId){
+        error = true;
     }
-}
 
-interface IGetAllTodoLists{
-    userId: string;
-}
-
-export const mapGetAllTodoListsRequest = (body: IGetAllTodoLists) => {
+    const mongooseListId = new mongoose.Types.ObjectId(listId)
     return{
-        userId: body.userId
+        listId: mongooseListId,
+        error: error
     }
 }

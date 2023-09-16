@@ -1,12 +1,12 @@
 import mongoose, { Model, Document, Types } from 'mongoose';
-export interface ITodoListsDocument extends Document {
+export interface ITodoListContainerDocument extends Document {
     userId: string;
     todoLists: Types.ObjectId[];
 }
-export type ITodoListsInput = {
-    userId: ITodoListsDocument['userId'];
+export type ITodoListContainerInput = {
+    userId: ITodoListContainerDocument['userId'];
 };
-export declare const todoListsSchema: mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
+export declare const todoListContainerSchema: mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
     userId: string;
     todoLists: Types.ObjectId[];
 }, mongoose.Document<unknown, {}, {
@@ -18,4 +18,4 @@ export declare const todoListsSchema: mongoose.Schema<any, mongoose.Model<any, a
 } & {
     _id: Types.ObjectId;
 }>;
-export declare const TodoLists: Model<ITodoListsDocument>;
+export declare const TodoListContainer: Model<ITodoListContainerDocument>;

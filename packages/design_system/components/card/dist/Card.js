@@ -21,36 +21,44 @@ const Card = props => {
     flexGrow: 1,
     flexShrink: 2,
     justifyContent: "flex-start",
-    alignItems: "center"
+    alignItems: "center",
+    pl: "5%",
+    pr: "5%"
   }, /*#__PURE__*/_react.default.createElement(_text.Text, {
     text: props.headline,
     color: theme.colors.neutral.onBackground,
-    fontSize: 'lg'
+    fontSize: '25px'
   })), props.subHeader && /*#__PURE__*/_react.default.createElement(_container.Container, {
     fontFamily: "'Barlow', sans-serif",
     flexGrow: 1,
     flexShrink: 2,
     justifyContent: "flex-start",
-    alignItems: "center"
+    alignItems: "center",
+    pl: "5%",
+    pr: "5%"
   }, /*#__PURE__*/_react.default.createElement(_text.Text, {
     text: props.subHeader,
     color: theme.colors.neutral.onBackground,
-    fontSize: 'sm'
+    fontSize: '15px'
   })), props.content && /*#__PURE__*/_react.default.createElement(_container.Container, {
     fontFamily: "'Barlow', sans-serif",
     flexGrow: 4,
     flexShrink: 0,
     justifyContent: "flex-start",
-    alignItems: "center"
+    alignItems: "center",
+    pl: "5%",
+    pr: "5%"
   }, /*#__PURE__*/_react.default.createElement(_text.Text, {
     text: props.content,
     color: theme.colors.neutral.onBackground,
-    fontSize: 'md'
+    fontSize: '12px'
   })), props.actionComponents && /*#__PURE__*/_react.default.createElement(_container.Container, {
     flexGrow: 1,
     flexShrink: 2,
     justifyContent: "flex-end",
-    alignItems: "center"
+    alignItems: "center",
+    pl: "5%",
+    pr: "5%"
   }, props.actionComponents));
 };
 exports.Card = Card;

@@ -1,0 +1,21 @@
+{
+    "presets": [
+        "@babel/env",
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-class-properties",
+        "@babel/plugin-syntax-jsx"
+    ],
+    "ignore": [
+        "./src/__stories__/*"
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "@babel/plugin-transform-modules-commonjs"
+            ]
+        }
+    }
+}

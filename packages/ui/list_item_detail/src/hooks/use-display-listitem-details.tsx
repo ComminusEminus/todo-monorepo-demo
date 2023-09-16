@@ -8,19 +8,20 @@ import {mapListItemDetailView} from '../services/list-detail-services'
 export const useDisplayListItemDetails = () => {
     const [displayItem, setDisplayItem] = useState<ITodoListItem | undefined>(undefined)
     
-    const handler = async (listItemId: string) => {
+    const fetchListItemDetails = async (listItemId: string) => {
         try{
             const response = await getTodoListItemById.execute(listItemId)
-            const mappedResponse = mapListItemDetailView(response);
-            setDisplayItem(mappedResponse);
+            //const mappedResponse = mapListItemDetailView(response);
+            const {data} = response
+            const {listItem} = data
+            setDisplayItem(listItem);
         }catch(err){
-            console.log('An error occured retrieviing list item by id')
+            console.log('useDisplayListItemDetails error: ' + err)
+
         }
     }
 
-    
-
-    return {handler, displayItem} as const 
+    return {fetchListItemDetails, displayItem} as const 
 }
 
 

@@ -22,15 +22,27 @@ var GetTodoListItemByIdUseCase = /*#__PURE__*/function () {
   _createClass(GetTodoListItemByIdUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(todoListItemid) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(listItemId) {
+        var data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.getTodoListItemById(todoListItemid);
+              if (listItemId) {
+                _context.next = 2;
+                break;
+              }
+              throw new Error('Arguments for get todo list item by id are incomplete');
             case 2:
+              data = {
+                listItemId: listItemId
+              };
+              console.log('listitemby id use case: data');
+              console.log(data);
+              _context.next = 7;
+              return this.repository.getTodoListItemById(data);
+            case 7:
               return _context.abrupt("return", _context.sent);
-            case 3:
+            case 8:
             case "end":
               return _context.stop();
           }

@@ -1,15 +1,17 @@
-import {ITodoListItem, IAxiosResponse} from '@core/entities'
+import {ITodoListItem, IHttpResponse, CompleteState} from '@core/entities'
 
-export const mapListItemDetailView = (response: IAxiosResponse): ITodoListItem => {
-    const {data}  = response;
-    const mappedResponse = response.data.map((list: ITodoListItem) => {
+export const mapListItemDetailView = (response: IHttpResponse) => {
+    /*const {data}  = response;
+    const {listItem} = data;
+    const mappedResponse = (listItem: ITodoListItem) => {
+        const completeState = listItem.complete == CompleteState.COMPLETED ? CompleteState.COMPLETED : CompleteState.INCOMPLETE
         return {
-            id: list.id,
-            title: list.title,
-            description: list.description,
-            complete: list.complete
+            _id: listItem._id,
+            title: listItem.title,
+            description: listItem.description,
+            complete: completeState
         }
-    })
+    }
     
-    return mappedResponse[0];
+    return mappedResponse;*/
 }

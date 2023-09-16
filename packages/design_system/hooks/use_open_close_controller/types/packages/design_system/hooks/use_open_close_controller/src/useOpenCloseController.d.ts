@@ -1,4 +1,4 @@
 export declare const useOpenCloseController: () => {
     sheetHandler: () => void;
-    animateState: string;
+    animateState: "static" | "animateOpen" | "animateClose";
 };

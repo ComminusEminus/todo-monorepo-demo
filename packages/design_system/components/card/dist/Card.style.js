@@ -38,7 +38,7 @@ const CardStyle = _styledComponents.default.div`
                 `;
   } else if (props.cardType === 'outline') {
     return (0, _styledComponents.css)`
-                    border: ${props.theme.space.sm} solid ${props.theme.colors.primary.baseContainer};
+                    border: ${props.theme.space.xs} solid ${props.theme.colors.primary.baseContainer};
                 `;
   }
 }}

@@ -5,7 +5,7 @@ import TerserPlugin from 'terser-webpack-plugin'
 
 
 const config = {
-
+  
   entry: './src/index.tsx',
   stats: {
     errorDetails: true
@@ -35,16 +35,8 @@ const config = {
         use: ["ts-loader"],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
+        test: /\.ttf$/,
+        type: 'asset/resource',
       }
     ],
   },
@@ -55,7 +47,11 @@ const config = {
     new HtmlWebpackPlugin(
       { template: './public/index.html' }
     ),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin({
+        dry: false,
+        verbose: true,
+        dangerouslyAllowCleanPatternsOutsideProject: true
+    })
   ],
   devServer: {
     static: {
@@ -71,3 +67,17 @@ const config = {
 };
 
 export default config
+/*
+{
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
+*/

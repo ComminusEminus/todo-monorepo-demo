@@ -22,12 +22,12 @@ var GetAllTodoListsUseCase = /*#__PURE__*/function () {
   _createClass(GetAllTodoListsUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(userId) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return this.repository.getAllTodosLists(userId);
+              return this.repository.getAllTodosLists();
             case 2:
               return _context.abrupt("return", _context.sent);
             case 3:
@@ -36,7 +36,7 @@ var GetAllTodoListsUseCase = /*#__PURE__*/function () {
           }
         }, _callee, this);
       }));
-      function execute(_x) {
+      function execute() {
         return _execute.apply(this, arguments);
       }
       return execute;

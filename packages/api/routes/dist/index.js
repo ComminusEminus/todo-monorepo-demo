@@ -10,6 +10,12 @@ var _todoListRoute = require("./todo-list.route.js");
 var _userRoute = require("./user.route.js");
 var router = (0, _express.Router)();
 exports.router = router;
-router.use('/listItem', _todoListItemRoute.listItemRouter);
-router.use('/user', _userRoute.userRouter);
-router.use('/todoList', _todoListRoute.todoListRouter);
+router.use('/', _todoListItemRoute.listItemRouter);
+router.use('/', _userRoute.userRouter);
+router.use('/', _todoListRoute.todoListRouter);
+
+/*
+router.use('/listItem', listItemRouter);
+router.use('/user', userRouter);
+router.use('/todoList', todoListRouter);
+*/

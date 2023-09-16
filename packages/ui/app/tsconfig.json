@@ -2,7 +2,9 @@
   "extends": "./tsconfig.base.json",
   "include": [
     "src",
-    "../../design_system/utils/theme/types/packages/design_system/utils/theme/src/styled.d.ts"
+    "../../design_system/utils/theme/types/packages/design_system/utils/theme/src/styled.d.ts",
+    "../../design_system/utils/theme/types/packages/design_system/utils/typeography/src/fonts.d.ts",
+    
   ],
   "references": [
     {
@@ -25,32 +27,3 @@
     "composite": true,
   },
 }
-/*
-
- "baseUrl": ".",
-  "paths":{
-    "@ui/contexts": "../contexts/tsconfig.json",
-    "@ui/pages": "../pages/tsconfig.json",
-    "@design/globalstyle": "../../design_system/utils/global_style/tsconfig.json",
-    "@design/basetheme": "../../design_system/utils/theme/tsconfig.json",
-    "@design/typography": "../../design_system/utils/typeography/tsconfig.json"
-  },
-  "references": [
-    {
-      "path": "../../design_system/utils/global_style/tsconfig.json"
-    },
-    {
-      "path": "../../design_system/utils/theme/tsconfig.json"
-    },
-    {
-      "path": "../../design_system/utils/typeography/tsconfig.json"
-    },
-    {
-      "path": "../contexts/tsconfig.json"
-    },
-    {
-      "path": "../pages/tsconfig.json"
-    },
-  ],
-
-*/

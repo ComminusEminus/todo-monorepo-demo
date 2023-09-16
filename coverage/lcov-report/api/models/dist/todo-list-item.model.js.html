@@ -91,22 +91,18 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">122x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,9 +117,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
 &nbsp;
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol &amp;&amp; "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >fu</span>nction (obj) { <span class="cstat-no" title="statement not covered" >return obj &amp;&amp; "function" == typeof Symbol &amp;&amp; obj.constructor === Symbol &amp;&amp; obj !== Symbol.prototype ? "symbol" : typeof obj; </span>},</span> _typeof(obj); }
 Object.defineProperty(exports, "__esModule", {
@@ -134,8 +130,6 @@ var _mongoose = _interopRequireWildcard(require("mongoose"));
 var _entities = require("@core/entities");
 function _getRequireWildcardCache(nodeInterop) { <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof WeakMap !== "function") <span class="cstat-no" title="statement not covered" >return null; </span>var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? <span class="branch-0 cbranch-no" title="branch not covered" >cacheNodeInterop </span>: cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { <span class="missing-if-branch" title="if path not taken" >I</span>if (!nodeInterop &amp;&amp; obj &amp;&amp; obj.__esModule) { <span class="cstat-no" title="statement not covered" >return obj; </span>} <span class="missing-if-branch" title="if path not taken" >I</span>if (obj === null || _typeof(obj) !== "object" &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >typeof obj !== "function")</span> { <span class="cstat-no" title="statement not covered" >return { "default": obj }; </span>} var cache = _getRequireWildcardCache(nodeInterop); <span class="missing-if-branch" title="if path not taken" >I</span>if (cache &amp;&amp; cache.has(obj)) { <span class="cstat-no" title="statement not covered" >return cache.get(obj); </span>} var newObj = {}; var hasPropertyDescriptor = Object.defineProperty &amp;&amp; Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" &amp;&amp; Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span> <span class="missing-if-branch" title="if path not taken" >I</span>if (desc &amp;&amp; (desc.get || desc.set)) { <span class="cstat-no" title="statement not covered" >Object.defineProperty(newObj, key, desc); </span>} else { newObj[key] = obj[key]; } } } newObj["default"] = obj; <span class="missing-if-branch" title="else path not taken" >E</span>if (cache) { cache.set(obj, newObj); } return newObj; }
-//export interface ITodoListItem extends Document{}
-&nbsp;
 var todoListItemSchema = new _mongoose.Schema({
   title: {
     type: _mongoose.Schema.Types.String,
@@ -148,7 +142,7 @@ var todoListItemSchema = new _mongoose.Schema({
   complete: {
     type: _mongoose.Schema.Types.String,
     required: true,
-    "default": _entities.ListItemStatus.INCOMPLETE
+    "default": _entities.CompleteState.INCOMPLETE
   }
 });
 exports.todoListItemSchema = todoListItemSchema;
@@ -160,7 +154,7 @@ exports.TodoListItem = TodoListItem;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-24T02:15:16.228Z
+                at 2023-09-02T23:04:17.804Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

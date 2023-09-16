@@ -1,3 +1,4 @@
-export { NavBarStyle } from './NavBar.style';
-export { NavBarTop, NavBarBottom } from './NavBar';
-export { NavBarLayoutTop, NavBarLayoutBottom } from './NavBarLayout';
+export * from './style/NavBar.style';
+export * from './presentation/NavBarTop';
+export * from './presentation/NavBarBottom';
+export * from './interfaces/INavBar';

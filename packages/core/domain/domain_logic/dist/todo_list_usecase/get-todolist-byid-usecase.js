@@ -23,14 +23,27 @@ var GetTodoListByIdUseCase = /*#__PURE__*/function () {
     key: "execute",
     value: function () {
       var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(listId) {
+        var data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.getTodoListById(listId);
-            case 2:
-              return _context.abrupt("return", _context.sent);
+              console.log('get todo list by id use case listId: ' + listId);
+              if (listId) {
+                _context.next = 3;
+                break;
+              }
+              throw new Error('Get todolists by id is missing listId');
             case 3:
+              data = {
+                listId: listId
+              };
+              console.log('get todo list by id use case data(below): ');
+              console.log(data);
+              _context.next = 8;
+              return this.repository.getTodoListById(data);
+            case 8:
+              return _context.abrupt("return", _context.sent);
+            case 9:
             case "end":
               return _context.stop();
           }

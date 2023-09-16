@@ -1,7 +1,7 @@
 import { ITodoListItemRepository } from '@core/abstractions';
-import { IAddNewTodoListItemFormResponse } from '@core/entities';
+import { IHttpResponse, IAddNewTodoListItemFormResponse } from '@core/entities';
 export declare class AddNewListItemUseCase {
     private readonly repository;
-    constructor(repository: ITodoListItemRepository);
-    execute(todoListId: string, listItem: IAddNewTodoListItemFormResponse, userId: string): Promise<import("@core/entities").IAxiosResponse>;
+    constructor(repository: ITodoListItemRepository<IHttpResponse>);
+    execute(listId: string, listItem: IAddNewTodoListItemFormResponse): Promise<IHttpResponse>;
 }

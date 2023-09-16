@@ -3,31 +3,31 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "AxiosHttpClient", {
+Object.defineProperty(exports, "HttpClientRepository", {
   enumerable: true,
   get: function get() {
-    return _httpClient.AxiosHttpClient;
+    return _httpClientRepoImp.HttpClientRepository;
   }
 });
-Object.defineProperty(exports, "TodoListItemRepoImp", {
+Object.defineProperty(exports, "TodoListItemRepository", {
   enumerable: true,
   get: function get() {
-    return _todolistItemRepoImp.TodoListItemRepoImp;
+    return _todolistItemRepoImp.TodoListItemRepository;
   }
 });
-Object.defineProperty(exports, "TodoListRepoImp", {
+Object.defineProperty(exports, "TodoListRepository", {
   enumerable: true,
   get: function get() {
-    return _todolistRepoImp.TodoListRepoImp;
+    return _todolistRepoImp.TodoListRepository;
   }
 });
-Object.defineProperty(exports, "UserRepoImp", {
+Object.defineProperty(exports, "UserRepository", {
   enumerable: true,
   get: function get() {
-    return _userRepoImp.UserRepoImp;
+    return _userRepoImp.UserRepository;
   }
 });
-var _httpClient = require("./http-client");
+var _httpClientRepoImp = require("./http-client-repo-imp");
 var _todolistRepoImp = require("./todolist-repo-imp");
 var _userRepoImp = require("./user-repo-imp");
 var _todolistItemRepoImp = require("./todolist-item-repo-imp");

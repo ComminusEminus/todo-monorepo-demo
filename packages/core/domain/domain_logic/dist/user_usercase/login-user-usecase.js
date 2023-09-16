@@ -22,15 +22,26 @@ var LoginUserUseCase = /*#__PURE__*/function () {
   _createClass(LoginUserUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(userName, password) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(username, password) {
+        var data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.loginUser(userName, password);
+              if (!(!username || !password)) {
+                _context.next = 2;
+                break;
+              }
+              throw new Error('Login is missing username or password');
             case 2:
+              data = {
+                username: username,
+                password: password
+              };
+              _context.next = 5;
+              return this.repository.loginUser(data);
+            case 5:
               return _context.abrupt("return", _context.sent);
-            case 3:
+            case 6:
             case "end":
               return _context.stop();
           }

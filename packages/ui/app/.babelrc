@@ -1,11 +1,15 @@
 {
     "presets": [
 	"@babel/env", 
-        "@babel/preset-typescript"
-        "@babel/react", 
+        "@babel/preset-typescript",
+        "@babel/react"
 
     ],
     "plugins": [
         "@babel/plugin-transform-class-properties"
+    ],
+    "ignore": [
+        "./src/**/*/__tests__/*",
+        "./src/**/*/__stories__/*"
     ]
 }

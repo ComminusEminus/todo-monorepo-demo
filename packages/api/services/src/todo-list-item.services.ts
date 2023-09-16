@@ -1,72 +1,94 @@
+import mongoose from 'mongoose'
+import {
+    IAddNewTodoListItemRequestDTO,
+    IDeleteListItemRequestDTO,
+    IFindListItemByIdRequestDTO,
+    IUpdateListItemRequestDTO,
+} from '@core/entities'
 
 
-interface INewTodoListItemBody{
+export const mapNewTodoListItem  = (body: IAddNewTodoListItemRequestDTO) => {
+    const {title, description, listId} = body
 
-    title: string;
-    description:string;
-    listId: string
+    let error = false;
 
+    if(!title || !description || !listId){
+    
+        error = true;
 
-}
+    }
 
-
-export const mapNewTodoListItem  = (body: INewTodoListItemBody) => {
+    const mongooseListId = new mongoose.Types.ObjectId(listId)
     
     return{
-        title: body.title,
-        description: body.description,
-        listId: body.listId
+        title: title,
+        description: description,
+        listId: listId,
+        error: error
     }
 }
 
-interface IMapDeleteRequest{
-    listId: string;
-    listItemId: string;
-}
+export const mapDeleteRequest = (body: IDeleteListItemRequestDTO) => {
+    const {listId, listItemId} = body;
 
-export const mapDeleteRequest = (body: IMapDeleteRequest) => {
+    let error = false;
+
+    if(!listId || !listItemId){
+    
+        error = true;
+
+    }
+
+
+    const mongooseListId = new mongoose.Types.ObjectId(listId)
+
+    const mongooseListItemId = new mongoose.Types.ObjectId(listItemId)
+
     return{
-        listId: body.listId,
-        listItemId: body.listItemId,
+        listId: mongooseListId,
+        listItemId: mongooseListItemId,
+        error: error
     }
 }
 
-interface IFindByIdRequest{
-    todoListItemId: string;
-}
+export const mapFindByIdRequest = (body: IFindListItemByIdRequestDTO) =>{
+    const {listItemId} = body
+    
+    let error = false;
 
-export const mapFindByIdRequest = (body: IFindByIdRequest) =>{
+    if(!listItemId){
+    
+        error = true;
+
+    }
+
+    const mongooseListItemId = new mongoose.Types.ObjectId(listItemId)
+
     return{
-        todoListItemId: body.todoListItemId,
+        id: mongooseListItemId,
+        error: error
     }
 }
 
-interface IUpdateListItemBody{
-    listItem: string;
-    update: IMapUpdateListItem;
-    userId: string;
-}
+export const mapUpdateListItem = (body: IUpdateListItemRequestDTO) => {
+    const {_id, title, description, complete} = body
 
-export const mapUpdateListItemBody = (body: IUpdateListItemBody) => {
+    let error = false;
+
+    if(!_id || !title || !description || !complete){
+    
+        error = true;
+
+    }
+
+    const mongooseId = new mongoose.Types.ObjectId(_id)
     return{
-        listItem: body.listItem,
-        update: body.update,
-        userId: body.userId
+        _id: mongooseId,
+        title: title,
+        description: description,
+        complete: complete,   
+        error: error
     }
 }
 
-export interface IMapUpdateListItem{
-    _id: string;
-    title: string;
-    description: string;
-    complete: string;
-}
 
-export const mapUpdateListItem = (update: IMapUpdateListItem) => {
-    return{
-        _id: update._id,
-        title: update.title,
-        description: update.description,
-        complete: update.complete
-    }
-}

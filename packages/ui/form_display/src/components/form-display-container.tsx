@@ -2,34 +2,51 @@ import React from 'react'
 import {Container} from '@design/container'
 import {useFormDisplay} from '../hooks/use-form-display'
 import {FormType} from '@core/entities'
-import {AddNewTodoListItemForm} from '@ui/todo-list'
-import {AddNewTodoListForm} from '@ui/todo-lists'
+import {AddNewTodoListItemFormPresentation} from '@ui/todo-list'
+import {AddNewTodoListFormPresentation} from '@ui/todo-lists'
 import {useTheme} from 'styled-components'
+import { Text } from '@design/text'
 
 export const FormDisplayContainer = () => {
-    const {formsState} = useFormDisplay()
+    const {formType} = useFormDisplay()
     const theme = useTheme()
 
-    if(formsState === FormType.NEW_TODOLIST){
+    if(formType === FormType.NEW_TODOLIST_ITEM){
         return(
             <Container
                 background = {theme.colors.neutral.surface}
-                height = {'25%'}
-                width = {'25%'}
-                elevation = {'sm'}
+                height = {'100%'}
+                width = {'100%'}
+                elevation = {'md'}
+                pt = {'10px'}
+                pb = {'10px'}
+                pr = {'10px'}
+                pl = {'10px'}
+                flexDirection = {'column'}
+                justifyContent = {'center'}
+                alignItems = {'flex-start'}
             >
-                <AddNewTodoListItemForm />
+                <Text text = {'Add New Todo List'} color = {'theme.colors.neutral.onSurface'} fontSize={theme.space.md} fontFamily={'Albert_Sans'} />
+                <AddNewTodoListItemFormPresentation />
             </Container>
         )
-    }else if(formsState === FormType.NEW_TODOLIST_ITEM){
+    }else if(formType === FormType.NEW_TODOLIST){
         return(
             <Container
                 background = {theme.colors.neutral.surface}
-                height = {'25%'}
-                width = {'25%'}
-                elevation = {'sm'}
+                height = {'100%'}
+                width = {'100%'}
+                elevation = {'md'}
+                pt = {'10px'}
+                pb = {'10px'}
+                pr = {'10px'}
+                pl = {'10px'}
+                flexDirection = {'column'}
+                justifyContent = {'center'}
+                alignItems = {'flex-start'}
             >
-                <AddNewTodoListForm />
+                <Text text = {'Add New List Item'} color = {'theme.colors.neutral.onSurface'} fontSize={theme.space.md} fontFamily={'Albert_Sans'} />
+                <AddNewTodoListFormPresentation />
             </Container>
         )
     }else{
@@ -38,7 +55,6 @@ export const FormDisplayContainer = () => {
                 background = {theme.colors.neutral.surface}
                 height = {'25%'}
                 width = {'25%'}
-                elevation = {'sm'}
             />
         )
     }

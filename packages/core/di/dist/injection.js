@@ -10,34 +10,34 @@ var _data = require("@core/data");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 //repo & http client config
-var httpClient = new _data.AxiosHttpClient('http://localhost:3000/');
-var todoListRepo = new _data.TodoListRepoImp(httpClient);
-var userRepo = new _data.UserRepoImp(httpClient);
-var todolistItemRepo = new _data.TodoListItemRepoImp(httpClient);
+var httpClientInstance = new _data.HttpClientRepository('http://localhost:3000/');
+var todoListRepositoryInstance = new _data.TodoListRepository(httpClientInstance);
+var userRepositoryInstance = new _data.UserRepository(httpClientInstance);
+var todolistItemRepositoryInstance = new _data.TodoListItemRepository(httpClientInstance);
 //todoList config
-var addNewTodoList = new UC.AddNewTodoListUseCase(todoListRepo);
+var addNewTodoList = new UC.AddNewTodoListUseCase(todoListRepositoryInstance);
 exports.addNewTodoList = addNewTodoList;
-var deleteTodoList = new UC.DeleteTodoListUseCase(todoListRepo);
+var deleteTodoList = new UC.DeleteTodoListUseCase(todoListRepositoryInstance);
 exports.deleteTodoList = deleteTodoList;
-var getAllTodoLists = new UC.GetAllTodoListsUseCase(todoListRepo);
+var getAllTodoLists = new UC.GetAllTodoListsUseCase(todoListRepositoryInstance);
 exports.getAllTodoLists = getAllTodoLists;
-var getTodoListById = new UC.GetTodoListByIdUseCase(todoListRepo);
+var getTodoListById = new UC.GetTodoListByIdUseCase(todoListRepositoryInstance);
 //todoListItems config
 exports.getTodoListById = getTodoListById;
-var addNewListItem = new UC.AddNewListItemUseCase(todolistItemRepo);
+var addNewListItem = new UC.AddNewListItemUseCase(todolistItemRepositoryInstance);
 exports.addNewListItem = addNewListItem;
-var deleteListItem = new UC.DeleteListItemUseCase(todolistItemRepo);
+var deleteListItem = new UC.DeleteListItemUseCase(todolistItemRepositoryInstance);
 exports.deleteListItem = deleteListItem;
-var updateListItem = new UC.UpdateListItemUseCase(todolistItemRepo);
+var updateListItem = new UC.UpdateListItemUseCase(todolistItemRepositoryInstance);
 exports.updateListItem = updateListItem;
-var getTodoListItemById = new UC.GetTodoListItemByIdUseCase(todolistItemRepo);
+var getTodoListItemById = new UC.GetTodoListItemByIdUseCase(todolistItemRepositoryInstance);
 //user config
 exports.getTodoListItemById = getTodoListItemById;
-var logoutUser = new UC.LogoutUserUseCase(userRepo);
+var logoutUser = new UC.LogoutUserUseCase(userRepositoryInstance);
 exports.logoutUser = logoutUser;
-var updateUserProfile = new UC.UpdateUserProfileUseCase(userRepo);
+var updateUserProfile = new UC.UpdateUserProfileUseCase(userRepositoryInstance);
 exports.updateUserProfile = updateUserProfile;
-var loginUser = new UC.LoginUserUseCase(userRepo);
+var loginUser = new UC.LoginUserUseCase(userRepositoryInstance);
 exports.loginUser = loginUser;
-var createNewUser = new UC.CreateNewUserUseCase(userRepo);
+var createNewUser = new UC.CreateNewUserUseCase(userRepositoryInstance);
 exports.createNewUser = createNewUser;

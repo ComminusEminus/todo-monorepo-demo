@@ -7,7 +7,9 @@
 		"@core/entities" : "^1.0.0"
 	},
 	"scripts": {
-		"build": "tsc --declaration --emitDeclarationOnly"
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
 	},
 	"module": "dist/src/index.ts",
     "main": "dist/src/index.ts",

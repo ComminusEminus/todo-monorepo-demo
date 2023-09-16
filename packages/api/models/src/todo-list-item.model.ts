@@ -1,14 +1,17 @@
 import mongoose, { Schema, Model, Document } from 'mongoose';
-import {ITodoListItem, ListItemStatus} from '@core/entities'
-
-//export interface ITodoListItem extends Document{}
+import {ITodoListItem, CompleteState} from '@core/entities'
 
 export type ITodoListItemInput = {
     title:ITodoListItem['title']
     description:ITodoListItem['description']
 }
 
-
+export type ITodoListItemReturn = {
+    _id: ITodoListItem['_id']
+    title: ITodoListItem['title']
+    description: ITodoListItem['description']
+    complete: ITodoListItem['complete']
+}
 export const todoListItemSchema = new Schema<ITodoListItem>(
     {
         title: {
@@ -22,7 +25,7 @@ export const todoListItemSchema = new Schema<ITodoListItem>(
         complete: {
             type: Schema.Types.String,
             required: true,
-            default: ListItemStatus.INCOMPLETE
+            default: CompleteState.INCOMPLETE
         }
     }
 )

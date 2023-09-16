@@ -1,8 +1,9 @@
 import {useUIContext} from '@ui/contexts'
 
 export const useFormDisplay = () => {
-    const {formsState} = useUIContext()
+    const {state} = useUIContext()
+    const {formType} = state
     
-    return {formsState} as const;
+    return {formType} as const;
 
 }

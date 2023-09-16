@@ -13,7 +13,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-//add list id 
 var DeleteListItemUseCase = /*#__PURE__*/function () {
   function DeleteListItemUseCase(repository) {
     _classCallCheck(this, DeleteListItemUseCase);
@@ -24,14 +23,25 @@ var DeleteListItemUseCase = /*#__PURE__*/function () {
     key: "execute",
     value: function () {
       var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(listItemId, listId) {
+        var data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.deleteTodoListItem(listItemId, listId);
+              if (!(!listItemId || !listId)) {
+                _context.next = 2;
+                break;
+              }
+              throw new Error('Delete list item arguments are incomplete');
             case 2:
+              data = {
+                listItemId: listItemId,
+                listId: listId
+              };
+              _context.next = 5;
+              return this.repository.deleteTodoListItem(data);
+            case 5:
               return _context.abrupt("return", _context.sent);
-            case 3:
+            case 6:
             case "end":
               return _context.stop();
           }

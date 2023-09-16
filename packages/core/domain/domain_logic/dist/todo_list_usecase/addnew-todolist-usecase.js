@@ -22,21 +22,32 @@ var AddNewTodoListUseCase = /*#__PURE__*/function () {
   _createClass(AddNewTodoListUseCase, [{
     key: "execute",
     value: function () {
-      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(todoList, userId) {
+      var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(_ref) {
+        var title, data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return this.repository.addNewTodoList(todoList, userId);
-            case 2:
-              return _context.abrupt("return", _context.sent);
+              title = _ref.title;
+              if (title) {
+                _context.next = 3;
+                break;
+              }
+              throw new Error('Add new todo list request is missing one or more form responses');
             case 3:
+              data = {
+                title: title
+              };
+              _context.next = 6;
+              return this.repository.addNewTodoList(data);
+            case 6:
+              return _context.abrupt("return", _context.sent);
+            case 7:
             case "end":
               return _context.stop();
           }
         }, _callee, this);
       }));
-      function execute(_x, _x2) {
+      function execute(_x) {
         return _execute.apply(this, arguments);
       }
       return execute;

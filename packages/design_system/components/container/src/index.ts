@@ -1,2 +1,3 @@
-export {Container} from './Container'
-export {ContainerStyle} from './Container.style'
+export * from './Container'
+export * from './Container.style'
+export * from './IContainerStyleProps'

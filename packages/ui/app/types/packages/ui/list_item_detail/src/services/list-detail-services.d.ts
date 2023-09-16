@@ -1,2 +1,2 @@
-import { ITodoListItem, IAxiosResponse } from '@core/entities';
-export declare const mapListItemDetailView: (response: IAxiosResponse) => ITodoListItem;
+import { ITodoListItem, IHttpResponse } from '@core/entities';
+export declare const mapListItemDetailView: (response: IHttpResponse) => ITodoListItem;

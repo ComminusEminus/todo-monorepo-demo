@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import {addNewTodoList, deleteTodoList, getTodoListById, getAllTodoLists} from '@api/controllers'
-
+import {URLS} from '@core/entities'
+import {verifyToken} from '@api/middlewares'
 
 export const todoListRouter = Router()
 
-todoListRouter.post('/add', addNewTodoList)
-todoListRouter.post('/delete', deleteTodoList)
-todoListRouter.get('/getById', getTodoListById)
-todoListRouter.get('/all', getAllTodoLists)
+todoListRouter.post("/" + URLS.LIST_ADD, verifyToken, addNewTodoList)
+todoListRouter.post("/" + URLS.LIST_DELETE, verifyToken, deleteTodoList)
+todoListRouter.post("/" + URLS.LIST_GETBYID, verifyToken, getTodoListById)
+todoListRouter.get("/" + URLS.LIST_ALL, verifyToken, getAllTodoLists)
     
 

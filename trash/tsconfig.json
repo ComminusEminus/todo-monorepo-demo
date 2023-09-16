@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": [
+        "node_modules/@core/*"
+      ],
+      "@design/*": [
+        "node_modules/@design/*"
+      ],
+      "@ui/*": [
+        "./node_modules/@ui/*"
+      ],
+      "@api/*": [
+        "node_modules/@api/*"
+      ]
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { ITodoListRepository } from '@core/abstractions';
+import { IHttpResponse } from '@core/entities';
 export declare class DeleteTodoListUseCase {
     private readonly repository;
-    constructor(repository: ITodoListRepository);
-    execute(listId: string, userId: string): Promise<import("@core/entities").IAxiosResponse>;
+    constructor(repository: ITodoListRepository<IHttpResponse>);
+    execute(listId: string): Promise<IHttpResponse>;
 }

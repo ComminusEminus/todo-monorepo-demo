@@ -1,52 +1,55 @@
 import {ITodoListItemRepository} from '@core/abstractions'
-import {IAddNewTodoListItemFormResponse, ITodoListItem, IAxiosResponse, IHttpClient} from '@core/entities'
 
-export class TodoListItemRepoImp implements ITodoListItemRepository{
-    dataSource: IHttpClient;
+import {
+    IFindListItemByIdRequestDTO, 
+    IUpdateListItemRequestDTO, 
+    IDeleteListItemRequestDTO, 
+    IAddNewTodoListItemRequestDTO,
+    URLS,
+    IHttpResponse
+} from '@core/entities'
 
-    constructor(dataSource: IHttpClient){
+import {HttpClientRepository} from './http-client-repo-imp'
+
+
+export class TodoListItemRepository implements ITodoListItemRepository<IHttpResponse>{
+    dataSource: HttpClientRepository;
+
+    constructor(dataSource: HttpClientRepository){
         this.dataSource = dataSource
     }
 
-    async getTodoListItemById(todoListItemId: string): Promise<IAxiosResponse>{
-        const params = {
-            url: 'listItem/getById',
-            data: {
-                todoListItemId: todoListItemId
-            }
-        }
+    async getTodoListItemById(data: IFindListItemByIdRequestDTO): Promise<IHttpResponse>{
         
-        return await this.dataSource.get(params)
-
-    }
-    async updateTodoListItem(updateData: ITodoListItem) : Promise<IAxiosResponse> {
         const params = {
-            url: 'listItem/update',
-            data: {
-                updateData
-            }
+            url: URLS.LIST_ITEM_GETBYID,
+            data: {...data}
         }
-        return await this.dataSource.put(params)
+        console.log('listitembyid repo')
+        console.log(params)
+        return await this.dataSource.post(params)
 
     }
-    async deleteTodoListItem(listItemId: string, listId: string): Promise<IAxiosResponse>{
+    async updateTodoListItem(data: IUpdateListItemRequestDTO) : Promise<IHttpResponse> {
         const params = {
-            url: 'listItem/delete',
-            data: {
-                listItemId: listItemId,
-                listId: listId 
-            }
+            url: URLS.LIST_ITEM_UPDATE,
+            data: {...data}
         }
-        return await this.dataSource.delete(params)
+        return await this.dataSource.post(params)
 
     }
-    async addTodoListItem(todoListItemId: string, listItem: IAddNewTodoListItemFormResponse): Promise<IAxiosResponse>{
+    async deleteTodoListItem(data: IDeleteListItemRequestDTO): Promise<IHttpResponse>{
         const params = {
-            url: 'listItem/add',
-            data: {
-                todoListItemId: todoListItemId,
-                listItem: listItem
-            }
+            url:  URLS.LIST_ITEM_DELETE,
+            data: {...data}
+        }
+        return await this.dataSource.post(params)
+
+    }
+    async addTodoListItem(data: IAddNewTodoListItemRequestDTO): Promise<IHttpResponse>{
+        const params = {
+            url: URLS.LIST_ITEM_ADD,
+            data: {...data}
         }
         return await this.dataSource.post(params)
 
