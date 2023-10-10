@@ -1,0 +1,37 @@
+{
+	"name": "@core/abstractions",
+
+	"version": "1.0.0",
+
+    "type": "module",
+
+	"description": "Repository interfaces for application",
+
+	"types":"types/packages/core/abstractions/src/index.d.ts",
+
+    "dependencies" : {
+		"@core/entities" : "^1.0.0"
+	},
+
+	"exports":  {
+		".": {
+			"import": [
+				"./src/index.ts", 
+				"./src/todo-list-item-repository.ts", 
+				"./src/todolistrepository.ts", 
+				"./src/userrepository.ts"
+			],
+			"require": [
+				"./dist/index.js"
+			]
+		}
+	},
+	
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "rm -rf types dist && npm run emitDeclarations && npm run transpile"
+	}
+	
+	
+}	

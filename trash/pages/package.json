@@ -1,0 +1,31 @@
+{
+	"name": "@reactui/pages",
+	"version": "1.0.0",
+	"description": "Context provider for shared states of user interface",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/create-user-page.ts", "./src/dashboard.ts", "./src/entry-point.ts", "./src/login-page.ts"],
+			"require": ["./dist/index.js", "./dist/create-user-page.js", "./dist/dashboard.js", "./dist/entry-point.js", "./dist/login-page.js"]
+		}
+	},
+	"types": "types/packages/ui/pages/src/index.d.ts",
+	"dependencies" : {
+		"@reactui/user" : "^1.0.0",
+		"@reactui/list-items" : "^1.0.0",
+		"@reactui/lists" : "^1.0.0",
+		"@reactui/list-item-detail" : "^1.0.0",
+		"@reactui/form-display" : "^1.0.0",
+		"@reactui/contexts" : "^1.0.0",
+		"@reactui/common": "^1.0.0"
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	},
+	"type": "module",
+	"module": "dist/src/index.js",
+	"browser": "dist/src/index.js",
+    "main": "dist/src/index.js"
+}	

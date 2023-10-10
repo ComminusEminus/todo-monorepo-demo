@@ -1,0 +1,19 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src/**/*"],
+    "exclude": [
+      "./src/__stories__/*"
+    ],
+    "references": [
+      {
+        "path": "../../utils/theme/tsconfig.json"
+      },
+      {
+        "path": "../svg_icon/tsconfig.json"
+      },
+    ],
+    "compilerOptions": {
+      "composite": true,
+    }
+}
+

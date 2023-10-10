@@ -1,0 +1,30 @@
+{
+	"name": "@reactui/contexts",
+
+	"version": "1.0.0",
+
+	"description": "context providers and reducers for application",
+
+	"type": "module",
+
+	"types": "types/packages/ui/react/contexts/src/index.d.ts",
+
+	"dependencies" : {
+		"@reactui/http" : "^1.0.0",
+		"@core/entities" : "^1.0.0"
+	},
+
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts"],
+			"require": ["./dist/index.js"]
+		}
+	},
+
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "rm -rf types dist && npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	}
+}	

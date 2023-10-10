@@ -1,0 +1,31 @@
+{
+	"name": "@reactui/auth",
+
+	"version": "1.0.0",
+
+	"description": "presentation of login and user creation views",
+
+	"type": "module",
+
+	"types": "types/packages/ui/react/features/auth/auth/src/index.d.ts",
+
+	"dependencies" : {
+		"@reactui/contexts" : "^1.0.0",
+		"@reactui/login" : "^1.0.0",
+		"@reactui/user" : "^1.0.0"
+	},
+
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts"],
+			"require": ["./dist/index.js"]
+		}
+	},
+
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	}
+}	

@@ -1,0 +1,30 @@
+{
+	"name": "@reactui/http",
+
+	"version": "1.0.0",
+
+	"description": "Injection of dependencies for repositories, http client, and use cases",
+
+	"type": "module",
+	
+	"types":"types/packages/ui/react/http/src/index.d.ts",
+
+    "dependencies" : {
+		"@core/entities" : "^1.0.0",
+		"@core/domain-logic" : "^1.0.0",
+		"@ui/config" : "^1.0.0"
+	},
+
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts", "./src/injection.ts"],
+			"require": ["./dist/index.js", "./dist/injection.js"]
+		}
+	},
+
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "rm -rf types dist && npm run emitDeclarations && npm run transpile"
+	}
+}	

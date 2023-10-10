@@ -1,0 +1,32 @@
+{
+	"name": "@core/entities",
+	
+	"version": "1.0.0",
+
+
+
+	"description": "Interfaces for domain",
+
+	"types": "types/packages/core/entities/src/index.d.ts",
+
+	"dependencies" : {
+
+	},
+
+	"exports":  {
+		".": {
+			"import": [
+				"./src/index.ts"
+			],
+			"require": [
+				"./dist/index.js"
+			]
+		}
+	},
+
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "rm -rf dist types && npm run emitDeclarations && npm run transpile"
+	}
+}	

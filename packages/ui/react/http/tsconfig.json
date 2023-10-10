@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src"],
+    "references": [
+      { 
+        "path": "../../../core/entities/tsconfig.json" 
+      },
+      { 
+        "path": "../../../core/domain-logic/ui/tsconfig.json" 
+      },
+      { 
+        "path": "../../config/tsconfig.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}

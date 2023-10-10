@@ -1,0 +1,38 @@
+{
+	"name": "@core/api-domain-logic",
+	
+	"version": "1.0.0",
+	
+
+	"description": "Use cases for the operations of the todo app",
+    
+	"types": "types/packages/core/domain-logic/api/src/index.d.ts",
+
+	"dependencies" : {
+		"@core/abstractions" : "^1.0.0",
+		"@core/entities" : "^1.0.0"
+	},
+	
+	"exports":  {
+		".": {
+			"import": [
+				"./src/index.ts", 
+				"./src/todo-list-item-repository/index.ts", 
+				"./src/todolistrepository/index.ts", 
+				"./src/userrepository/index.ts"
+			],
+			"require": [
+				"./dist/index.js", 
+				"./dist/todo-list-item-repository/index.js", 
+				"./dist/todolistrepository/index.js", 
+				"./dist/userrepository/index.js"
+			]
+		}
+	},
+	
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "rm -rf dist types && npm run emitDeclarations && npm run transpile"
+	}
+}	

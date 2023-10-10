@@ -1,0 +1,24 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.USER_STATUS = exports.PAGE_DISPLAY_STATE = exports.LOGINACTIONS = void 0;
+var PAGE_DISPLAY_STATE = /*#__PURE__*/function (PAGE_DISPLAY_STATE) {
+  PAGE_DISPLAY_STATE["LOGIN_PAGE"] = "LOGIN_PAGE";
+  PAGE_DISPLAY_STATE["CREATE_NEW_PAGE"] = "CREATE_NEW_PAGE";
+  return PAGE_DISPLAY_STATE;
+}({});
+exports.PAGE_DISPLAY_STATE = PAGE_DISPLAY_STATE;
+var USER_STATUS = /*#__PURE__*/function (USER_STATUS) {
+  USER_STATUS["LOGGED_IN"] = "LOGGED_IN";
+  USER_STATUS["LOGGED_OUT"] = "LOGGED_OUT";
+  return USER_STATUS;
+}({});
+exports.USER_STATUS = USER_STATUS;
+var LOGINACTIONS = /*#__PURE__*/function (LOGINACTIONS) {
+  LOGINACTIONS["LOGIN_USER"] = "LOGIN_USER";
+  LOGINACTIONS["LOGOUT_USER"] = "LOGOUT_USER";
+  return LOGINACTIONS;
+}({});
+exports.LOGINACTIONS = LOGINACTIONS;

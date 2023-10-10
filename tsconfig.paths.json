@@ -6,7 +6,9 @@
         "@core/*": ["node_modules/@core/*"],
         "@design/*": ["node_modules/@design/*"],
         "@ui/*": ["./node_modules/@ui/*"],
-        "@api/*": ["node_modules/@api/*"]
+        "@api/*": ["node_modules/@api/*"],
+        "@reactui/*": ["./node_modules/@reactui/*"],
+        "@storage/*": ["./node_modules/@databases/*"],
     }
   }
 }

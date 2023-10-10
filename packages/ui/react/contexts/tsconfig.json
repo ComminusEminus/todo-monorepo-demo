@@ -1,0 +1,19 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src", "../../../design_system/react/utils/theme/types/packages/design_system/utils/theme/src/styled.d.ts"],
+    "exclude": [
+      "./src/**/*/__tests__/*",
+      "./src/**/*/__stories__/*"
+    ],
+    "references": [
+      { 
+        "path": "../../../core/entities/tsconfig.json" 
+      },
+      { 
+        "path": "../http/tsconfig.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}

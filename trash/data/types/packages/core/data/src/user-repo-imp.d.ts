@@ -1,0 +1,11 @@
+import { IUserRepository } from '@core/abstractions';
+import { INewUserRequestDTO, IUserLoginRequestDTO, IUserProfileUpdateRequestDTO, IHttpResponse, IHttpInput } from '@core/entities';
+import { IHttpClientRepository } from '@core/abstractions';
+export declare class UserRepository implements IUserRepository<IHttpResponse> {
+    dataSource: IHttpClientRepository<IHttpInput, IHttpResponse>;
+    constructor(dataSource: IHttpClientRepository<IHttpInput, IHttpResponse>);
+    loginUser(data: IUserLoginRequestDTO): Promise<IHttpResponse>;
+    logoutUser(): Promise<IHttpResponse>;
+    editUserProfile(data: IUserProfileUpdateRequestDTO): Promise<IHttpResponse>;
+    createUserProfile(data: INewUserRequestDTO): Promise<IHttpResponse>;
+}

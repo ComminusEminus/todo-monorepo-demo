@@ -1,0 +1,38 @@
+{
+	"name": "@reactui/common",
+
+	"version": "1.0.0",
+
+	"description": "shared components",
+
+	"type": "module",
+
+	"types": "types/packages/ui/react/common/src/index.d.ts",
+
+	"dependencies" : {
+		"@reactui/http" : "^1.0.0",
+		"@core/entities" : "^1.0.0",
+		"@design/buttons" : "^1.0.0",
+		"@design/container" : "^1.0.0",
+		"@design/forms" : "^1.0.0",
+		"@design/navbar" : "^1.0.0",
+		"@design/svgicon" : "^1.0.0",
+		"@design/text" : "^1.0.0",
+		"@reactui/contexts": "^1.0.0"
+
+	},
+
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts"],
+			"require": ["./dist/index.js"]
+		}
+	},
+
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	}
+}	

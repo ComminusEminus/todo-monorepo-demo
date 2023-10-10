@@ -1,0 +1,30 @@
+{
+	"name": "@design/buttons",
+	"version": "1.0.0",
+	"description": "Array of button styles",
+    "type": "module",
+	"browser": "./dist/index.js",
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile"
+	},
+	"module": "./dist/index.js",
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts" ],
+			"require": ["./dist/index.js"]
+		}
+	},
+    "main": "dist/index.js",
+	"types": "types/packages/design_system/react/components/button/src/index.d.ts",
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions",
+		"last 2 FirefoxAndroid versions",
+		"last 2 iOS version",
+		"last 2 safari version"
+	]
+}	

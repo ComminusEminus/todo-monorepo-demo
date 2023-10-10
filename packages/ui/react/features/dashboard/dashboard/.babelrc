@@ -1,0 +1,14 @@
+{
+    "presets": [
+        "@babel/env", 
+        "@babel/react", 
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-class-properties"
+    ],
+    "ignore": [
+        "./src/**/*/__tests__/*",
+        "./src/**/*/__stories__/*"
+    ]
+  }

@@ -1,0 +1,10 @@
+{ 
+  "extends": "../../../tsconfig.paths.json",
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "outDir": "./types"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": ["src", "src/express-req-user.ts"],
+    "references": [
+      { 
+        "path": "../../databases/tsconfig.json" 
+      },
+      { 
+        "path": "../../core/domain-logic/api/tsconfig.json" 
+      }
+    ],
+    "compilerOptions": {
+      "composite": true,
+    },
+}

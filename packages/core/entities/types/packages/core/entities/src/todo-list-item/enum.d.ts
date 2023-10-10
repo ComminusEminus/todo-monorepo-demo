@@ -1,0 +1,9 @@
+export declare enum Filter {
+    ALL_LIST_ITEMS = "ALL_LIST_ITEMS",
+    COMPLETE_LIST_ITEMS = "COMPLETE_LIST_ITEMS",
+    INCOMPLETE_LIST_ITEMS = "INCOMPLETE_LIST_ITEMS"
+}
+export declare enum CompleteState {
+    COMPLETED = "COMPLETED",
+    INCOMPLETE = "INCOMPLETE"
+}

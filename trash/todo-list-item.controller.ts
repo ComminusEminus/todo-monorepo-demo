@@ -35,7 +35,7 @@ export const addNewListItem = async (req: Request, res: Response, next: NextFunc
 
         const newTodoListItem: ITodoListItem | null = await TodoListItem.create({title: title, description: description})   
 
-        await TodoList.updateOne({_id: listId}, { $addToSet: { listItems: [newTodoListItem._id] } })
+        await TodoList.updateOne({_id: listId}, { $push: { listItems: newTodoListItem._id } })
 
         const successAddNewListItemResponse :IAddNewListItemResponseDTO = {message: Responses.OK}
 

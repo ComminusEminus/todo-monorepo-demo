@@ -1,0 +1,31 @@
+{
+	"name": "@reactui/login",
+
+	"version": "1.0.0",
+
+	"description": "user creation components and presentation",
+
+	"type": "module",
+
+	"types": "types/packages/ui/react/features/auth/login/src/index.d.ts",
+
+	"exports":  {
+		".": {
+			"import": ["./src/index.ts"],
+			"require": ["./dist/index.js"]
+		}
+	},
+	
+	"dependencies" : {
+		"@core/entities" : "^1.0.0",
+		"@reactui/contexts" : "^1.0.0",
+		"@reactui/http" : "^1.0.0",
+		"@reactui/common" : "^1.0.0"
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit"
+	}
+}	

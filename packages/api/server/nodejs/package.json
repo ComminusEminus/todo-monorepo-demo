@@ -1,0 +1,32 @@
+{
+	"name": "@api/server",
+
+	"version": "1.0.0",
+
+	"description": "",
+	
+	"dependencies": {
+		"@api/routes": "^1.0.0",
+		"@api/databases": "^1.0.0"
+	},
+
+	"types": "dist/packages/api/server/nodejs/src/index.d.ts",
+
+	"exports": {
+		".": {
+			"import": [
+				"./src/index.ts"
+			],
+			"require": [
+				"./dist/index.js"
+			]
+		}
+	},
+	"scripts": {
+		"transpile": "babel -d dist/ --extensions .ts src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "rm -rf types dist && npm run emitDeclarations && npm run transpile",
+		"check-types": "tsc --noEmit",
+		"start": "nodemon dist/index.js"
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "@reactui/app",
+
+	"version": "1.0.0",
+
+	"description": "bundled web application",
+
+	"type": "module",
+
+	"types": "types/packages/ui/app/src/index.d.ts",
+
+	"dependencies" : {
+		"@ui/contexts" : "^1.0.0",
+		"@ui/pages" : "^1.0.0",
+        "@design/globalstyle" : "^1.0.0",
+        "@design/basetheme" : "^1.0.0",
+        "@design/typeography" : "^1.0.0",
+		"@design/buttons" : "^1.0.0"
+	},
+    "scripts": {
+		"transpile": "babel -d dist/ --extensions .ts,.tsx src/",
+		"emitDeclarations": "tsc --declaration --emitDeclarationOnly",
+		"build": "npm run emitDeclarations && npm run transpile",
+		"start": "webpack serve",
+		"bundlebuild": "webpack"
+    }
+
+
+}	
