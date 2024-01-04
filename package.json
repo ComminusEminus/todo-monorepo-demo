@@ -22,6 +22,7 @@
     "uibundle": "npm run bundlebuild -w ./packages/ui/react/app",
     "uilaunch": "npm run start -w ./packages/ui/react/app",
     "apilaunch": "npm run start -w ./packages/api/server/nodejs",
+    "launchApp": "npm run start -w ./packages/api/server/nodejs && npm run start -w ./packages/ui/react/app",
     "test": "jest --watchAll --coverage --verbose --silent --runInBand"
   },
   "config": {
